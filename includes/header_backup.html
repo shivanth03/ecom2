@@ -1,0 +1,117 @@
+<!-- Header Section -->
+<header>
+  <nav class="navbar">
+    <div class="logo">
+      <div class="img">
+        <img id="header-logo" src="images/logo.png" alt="Ecomshop Logo" />
+      </div>
+      <div class="logo-header">
+        <h4><a id="home-link" href="index.html">Ecomshop</a></h4>
+        <small>Digital Store</small>
+      </div>
+    </div>
+    
+    <ul class="nav-list">
+      <div class="logo mobile-logo">
+        <div class="title">
+          <div class="img">
+            <img id="mobile-logo" src="images/logo.png" alt="Ecomshop Logo" />
+          </div>
+          <div class="logo-header">
+            <h4><a id="mobile-home-link" href="index.html">Ecomshop</a></h4>
+            <small>Digital Store</small>
+          </div>
+        </div>
+        <button class="close"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      
+      <li><a href="index.html">Home</a></li>
+      <li><a href="Pages/book-filter.html">Ebooks</a></li>
+      <li><a href="Pages/book-filter.html">Templates</a></li>
+      <li><a href="Pages/book-filter.html">Software</a></li>
+      <li><a href="Pages/book-filter.html">Bundles</a></li>
+      <li><a href="Pages/contact.html">Contact</a></li>
+      
+      <div class="auth-buttons">
+        <button class="login-btn"><a href="Pages/login.html">Log In</a></button>
+        <button class="signup-btn">
+          <i class="fa-solid fa-user"></i>
+          <a href="Pages/registration.html">Sign Up</a>
+        </button>
+      </div>
+      
+      <div class="cart-icon">
+        <a href="Pages/cart-item.html">
+          <i class="fa-solid fa-shopping-cart"></i>
+          <span class="cart-count">0</span>
+        </a>
+      </div>
+    </ul>
+    
+    <div class="hamburger">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+  </nav>
+</header>
+
+<!-- Header JavaScript -->
+<script>
+// Hamburger menu functionality
+let hamburgerbtn = document.querySelector(".hamburger");
+let nav_list = document.querySelector(".nav-list");
+let closebtn = document.querySelector(".close");
+
+if (hamburgerbtn && nav_list && closebtn) {
+  hamburgerbtn.addEventListener("click", () => {
+    nav_list.classList.add("active");
+  });
+  closebtn.addEventListener("click", () => {
+    nav_list.classList.remove("active");
+  });
+  
+  // Close menu when clicking outside
+  document.addEventListener("click", (e) => {
+    if (!nav_list.contains(e.target) && !hamburgerbtn.contains(e.target)) {
+      nav_list.classList.remove("active");
+    }
+  });
+}
+
+// Cart functionality
+function updateCartCount() {
+  let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+  let cartCount = document.querySelector('.cart-count');
+  if (cartCount) {
+    cartCount.textContent = cartItems.length;
+  }
+}
+
+// Fix paths based on current page location
+function fixHeaderPaths() {
+  const isInPagesFolder = window.location.pathname.includes('/Pages/');
+  const pathPrefix = isInPagesFolder ? '../' : '';
+  
+  // Fix logo image paths
+  const headerLogo = document.getElementById('header-logo');
+  const mobileLogo = document.getElementById('mobile-logo');
+  if (headerLogo) headerLogo.src = pathPrefix + 'images/logo.png';
+  if (mobileLogo) mobileLogo.src = pathPrefix + 'images/logo.png';
+  
+  // Fix home links
+  const homeLink = document.getElementById('home-link');
+  const mobileHomeLink = document.getElementById('mobile-home-link');
+  if (homeLink) homeLink.href = pathPrefix + 'index.html';
+  if (mobileHomeLink) mobileHomeLink.href = pathPrefix + 'index.html';
+}
+
+// Update cart count on page load
+document.addEventListener('DOMContentLoaded', function() {
+  updateCartCount();
+  fixHeaderPaths();
+});
+
+// Listen for cart updates
+window.addEventListener('storage', updateCartCount);
+</script>

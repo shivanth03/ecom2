@@ -1,0 +1,139 @@
+<!-- Footer Section -->
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <!-- Company Info Section -->
+      <div class="footer-section company-info">
+        <div class="logo">
+          <div class="img">
+            <img id="footer-logo" src="images/logo.png" alt="Ecomshop Logo" />
+          </div>
+          <div class="title">
+            <h4>Ecomshop</h4>
+            <small>Digital Store</small>
+          </div>
+        </div>
+        <div class="description">
+          <p>Your one-stop digital marketplace for premium ebooks, templates, and software.</p>
+        </div>
+        <div class="social-links">
+          <h5>Follow Us</h5>
+          <ul class="social-icons">
+            <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Quick Links Section -->
+      <div class="footer-section quick-links">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Pages/book-filter.html">All Products</a></li>
+          <li><a href="Pages/contact.html">About Us</a></li>
+          <li><a href="Pages/contact.html">Support</a></li>
+        </ul>
+      </div>
+
+      <!-- Product Categories -->
+      <div class="footer-section categories">
+        <h5>Categories</h5>
+        <ul>
+          <li><a href="Pages/book-filter.html">Ebooks</a></li>
+          <li><a href="Pages/book-filter.html">Templates</a></li>
+          <li><a href="Pages/book-filter.html">Software</a></li>
+          <li><a href="Pages/book-filter.html">Bundles</a></li>
+        </ul>
+      </div>
+
+      <!-- Account Section -->
+      <div class="footer-section account">
+        <h5>Account</h5>
+        <ul>
+          <li><a href="Pages/login.html">Login</a></li>
+          <li><a href="Pages/registration.html">Sign Up</a></li>
+          <li><a href="Pages/cart-item.html">Cart</a></li>
+          <li><a href="Pages/checkout.html">Checkout</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Section -->
+      <div class="footer-section contact-info">
+        <h5>Contact Info</h5>
+        <ul class="contact-details">
+          <li>
+            <i class="fa-solid fa-location-dot"></i>
+            <span>San Francisco, CA</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-phone"></i>
+            <span>+1 (234) 567-8991</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-envelope"></i>
+            <span>support@ecomshop.com</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="copyright">
+        <p>&copy; 2024 Ecomshop. All rights reserved.</p>
+      </div>
+      <div class="payment-methods">
+        <span>We Accept:</span>
+        <div class="payment-icons">
+          <i class="fa-brands fa-cc-visa"></i>
+          <i class="fa-brands fa-cc-mastercard"></i>
+          <i class="fa-brands fa-cc-paypal"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to top button -->
+<button class="back-to-top"><i class="fa-solid fa-chevron-up"></i></button>
+
+<!-- Footer JavaScript -->
+<script>
+// Back to top button functionality
+let backbtn = document.querySelector(".back-to-top");
+if (backbtn) {
+  const scrollBtnDisplay = function () {
+    window.scrollY > 100
+      ? backbtn.classList.add("show")
+      : backbtn.classList.remove("show");
+  };
+  window.addEventListener("scroll", scrollBtnDisplay);
+
+  const scrollWindow = function () {  
+    if (window.scrollY != 0) {
+      setTimeout(function () {
+        window.scrollTo(0, window.scrollY - 50);
+        scrollWindow();
+      }, 10);
+    }
+  };
+  backbtn.addEventListener("click", scrollWindow);
+}
+
+// Fix footer paths based on current page location
+function fixFooterPaths() {
+  const isInPagesFolder = window.location.pathname.includes('/Pages/');
+  const pathPrefix = isInPagesFolder ? '../' : '';
+  
+  // Fix footer logo path
+  const footerLogo = document.getElementById('footer-logo');
+  if (footerLogo) footerLogo.src = pathPrefix + 'images/logo.png';
+}
+
+// Fix paths on load
+document.addEventListener('DOMContentLoaded', fixFooterPaths);
+</script>

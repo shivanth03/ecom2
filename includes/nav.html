@@ -1,0 +1,256 @@
+<!-- Header Section -->
+<header>
+  <nav class="navbar">
+    <div class="logo">
+      <div class="img">
+        <img id="header-logo" src="images/logo.png" alt="Ecomshop Logo" />
+      </div>
+      <div class="logo-header">
+        <h4><a id="home-link" href="index.html">Ecomshop</a></h4>
+        <small>Digital Store</small>
+      </div>
+    </div>
+    
+    <ul class="nav-list">
+      <div class="logo mobile-logo">
+        <div class="title">
+          <div class="img">
+            <img id="mobile-logo" src="images/logo.png" alt="Ecomshop Logo" />
+          </div>
+          <div class="logo-header">
+            <h4><a id="mobile-home-link" href="index.html">Ecomshop</a></h4>
+            <small>Digital Store</small>
+          </div>
+        </div>
+        <button class="close"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      
+      <li><a href="index.html">Home</a></li>
+      <li><a href="Pages/book-filter.html">Ebooks</a></li>
+      <li><a href="Pages/book-filter.html">Templates</a></li>
+      <li><a href="Pages/book-filter.html">Software</a></li>
+      <li><a href="Pages/book-filter.html">Bundles</a></li>
+      <li><a href="Pages/contact.html">Contact</a></li>
+      
+      <div class="auth-buttons">
+        <button class="login-btn"><a href="Pages/login.html">Log In</a></button>
+        <button class="signup-btn">
+          <i class="fa-solid fa-user"></i>
+          <a href="Pages/registration.html">Sign Up</a>
+        </button>
+      </div>
+      
+      <div class="cart-icon">
+        <a href="Pages/cart-item.html">
+          <i class="fa-solid fa-shopping-cart"></i>
+          <span class="cart-count">0</span>
+        </a>
+      </div>
+    </ul>
+    
+    <div class="hamburger">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+  </nav>
+</header>
+
+<!-- Header JavaScript -->
+<script>
+// Hamburger menu functionality
+let hamburgerbtn = document.querySelector(".hamburger");
+let nav_list = document.querySelector(".nav-list");
+let closebtn = document.querySelector(".close");
+
+if (hamburgerbtn && nav_list && closebtn) {
+  hamburgerbtn.addEventListener("click", () => {
+    nav_list.classList.add("active");
+  });
+  closebtn.addEventListener("click", () => {
+    nav_list.classList.remove("active");
+  });
+  
+  // Close menu when clicking outside
+  document.addEventListener("click", (e) => {
+    if (!nav_list.contains(e.target) && !hamburgerbtn.contains(e.target)) {
+      nav_list.classList.remove("active");
+    }
+  });
+}
+
+// Cart functionality
+function updateCartCount() {
+  let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+  let cartCount = document.querySelector('.cart-count');
+  if (cartCount) {
+    cartCount.textContent = cartItems.length;
+  }
+}
+
+// Fix paths based on current page location
+function fixHeaderPaths() {
+  const isInPagesFolder = window.location.pathname.includes('/Pages/');
+  const pathPrefix = isInPagesFolder ? '../' : '';
+  
+  // Fix logo image paths
+  const headerLogo = document.getElementById('header-logo');
+  const mobileLogo = document.getElementById('mobile-logo');
+  if (headerLogo) headerLogo.src = pathPrefix + 'images/logo.png';
+  if (mobileLogo) mobileLogo.src = pathPrefix + 'images/logo.png';
+  
+  // Fix home links
+  const homeLink = document.getElementById('home-link');
+  const mobileHomeLink = document.getElementById('mobile-home-link');
+  if (homeLink) homeLink.href = pathPrefix + 'index.html';
+  if (mobileHomeLink) mobileHomeLink.href = pathPrefix + 'index.html';
+}
+
+// Update cart count on page load
+document.addEventListener('DOMContentLoaded', function() {
+  updateCartCount();
+  fixHeaderPaths();
+});
+
+// Listen for cart updates
+window.addEventListener('storage', updateCartCount);
+</script>
+<!-- Footer Section -->
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <!-- Company Info Section -->
+      <div class="footer-section company-info">
+        <div class="logo">
+          <div class="img">
+            <img id="footer-logo" src="images/logo.png" alt="Ecomshop Logo" />
+          </div>
+          <div class="title">
+            <h4>Ecomshop</h4>
+            <small>Digital Store</small>
+          </div>
+        </div>
+        <div class="description">
+          <p>Your one-stop digital marketplace for premium ebooks, templates, and software.</p>
+        </div>
+        <div class="social-links">
+          <h5>Follow Us</h5>
+          <ul class="social-icons">
+            <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Quick Links Section -->
+      <div class="footer-section quick-links">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Pages/book-filter.html">All Products</a></li>
+          <li><a href="Pages/contact.html">About Us</a></li>
+          <li><a href="Pages/contact.html">Support</a></li>
+        </ul>
+      </div>
+
+      <!-- Product Categories -->
+      <div class="footer-section categories">
+        <h5>Categories</h5>
+        <ul>
+          <li><a href="Pages/book-filter.html">Ebooks</a></li>
+          <li><a href="Pages/book-filter.html">Templates</a></li>
+          <li><a href="Pages/book-filter.html">Software</a></li>
+          <li><a href="Pages/book-filter.html">Bundles</a></li>
+        </ul>
+      </div>
+
+      <!-- Account Section -->
+      <div class="footer-section account">
+        <h5>Account</h5>
+        <ul>
+          <li><a href="Pages/login.html">Login</a></li>
+          <li><a href="Pages/registration.html">Sign Up</a></li>
+          <li><a href="Pages/cart-item.html">Cart</a></li>
+          <li><a href="Pages/checkout.html">Checkout</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Section -->
+      <div class="footer-section contact-info">
+        <h5>Contact Info</h5>
+        <ul class="contact-details">
+          <li>
+            <i class="fa-solid fa-location-dot"></i>
+            <span>San Francisco, CA</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-phone"></i>
+            <span>+1 (234) 567-8991</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-envelope"></i>
+            <span>support@ecomshop.com</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="copyright">
+        <p>&copy; 2024 Ecomshop. All rights reserved.</p>
+      </div>
+      <div class="payment-methods">
+        <span>We Accept:</span>
+        <div class="payment-icons">
+          <i class="fa-brands fa-cc-visa"></i>
+          <i class="fa-brands fa-cc-mastercard"></i>
+          <i class="fa-brands fa-cc-paypal"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to top button -->
+<button class="back-to-top"><i class="fa-solid fa-chevron-up"></i></button>
+
+<!-- Footer JavaScript -->
+<script>
+// Back to top button functionality
+let backbtn = document.querySelector(".back-to-top");
+if (backbtn) {
+  const scrollBtnDisplay = function () {
+    window.scrollY > 100
+      ? backbtn.classList.add("show")
+      : backbtn.classList.remove("show");
+  };
+  window.addEventListener("scroll", scrollBtnDisplay);
+
+  const scrollWindow = function () {  
+    if (window.scrollY != 0) {
+      setTimeout(function () {
+        window.scrollTo(0, window.scrollY - 50);
+        scrollWindow();
+      }, 10);
+    }
+  };
+  backbtn.addEventListener("click", scrollWindow);
+}
+
+// Fix footer paths based on current page location
+function fixFooterPaths() {
+  const isInPagesFolder = window.location.pathname.includes('/Pages/');
+  const pathPrefix = isInPagesFolder ? '../' : '';
+  
+  // Fix footer logo path
+  const footerLogo = document.getElementById('footer-logo');
+  if (footerLogo) footerLogo.src = pathPrefix + 'images/logo.png';
+}
+
+// Fix paths on load
+document.addEventListener('DOMContentLoaded', fixFooterPaths);
+</script>

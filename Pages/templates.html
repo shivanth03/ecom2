@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Website Templates - Ecomshop Template Store</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="templates.css" />
+    <!--- google font link-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Fontawesome Link for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="apple-touch-icon" sizes="60x60" href="../favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+    <link rel="manifest" href="../favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body class="page-container">
+    <script>
+        // Immediately scroll to top on page load and disable scroll restoration
+        if (window.history.scrollRestoration) {
+            window.history.scrollRestoration = 'manual';
+        }
+        
+        // Force scroll to top immediately
+        window.scrollTo(0, 0);
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+        
+        // Prevent any scroll during page load
+        document.addEventListener('DOMContentLoaded', function() {
+            window.scrollTo(0, 0);
+            setTimeout(() => {
+                window.scrollTo(0, 0);
+            }, 100);
+        });
+        
+        // Force scroll to top on page show (back button)
+        window.addEventListener('pageshow', function() {
+            window.scrollTo(0, 0);
+        });
+    </script>
+    
+    <!-- Header will be loaded here -->
+    <div id="header-placeholder"></div>
+
+    <!-- Templates Hero Banner (similar to home page) -->
+    <section class="templates-hero-banner animate-section">
+      <div class="main">
+        <div class="content">
+          <small>premium templates</small>
+          <h2>Special 50% Off</h2>
+          <h5>for all website templates</h5>
+          <p>
+            Get access to thousands of professional website templates, themes & digital products. 
+            Create stunning websites with modern designs and responsive layouts.
+          </p>
+          <div class="btns">
+            <button>Browse Templates<i class="fa-solid fa-arrow-right"></i></button>
+            <button>View All Deals</button>
+          </div>
+        </div>
+        <div class="img">
+          <img
+            src="../images/teenager-student-girl-yellow-pointing-finger-side-copy.png"
+            alt="Browse Templates"
+          />
+        </div>
+      </div>
+      <div class="square-dot">
+        <i class="fa-solid fa-square"></i>
+        <i class="fa-solid fa-square"></i>
+        <i class="fa-solid fa-square"></i>
+        <i class="fa-solid fa-square"></i>
+        <i class="fa-solid fa-square"></i>
+        <i class="fa-solid fa-square"></i>
+        <i class="fa-solid fa-square"></i>
+        <i class="fa-solid fa-square"></i>
+        <i class="fa-solid fa-square"></i>
+        <i class="fa-solid fa-square"></i>
+        <i class="fa-solid fa-square"></i>
+        <i class="fa-solid fa-square"></i>
+      </div>
+      <div class="orange-circle"></div>
+      <div class="blue-circle"></div>
+    </section>
+
+    <!-- Search & Filter Section -->
+    <section class="search-filter-section animate-section">
+        <div class="container">
+            <div class="search-bar">
+                <div class="search-input-wrapper">
+                    <i class="fa-solid fa-search"></i>
+                    <input type="text" placeholder="Search templates, themes, and more..." id="templateSearch">
+                </div>
+                <button class="search-btn">Search</button>
+            </div>
+            
+            <div class="filter-tabs">
+                <button class="filter-tab active" data-category="all">All Templates</button>
+                <button class="filter-tab" data-category="wordpress">WordPress</button>
+                <button class="filter-tab" data-category="html">HTML5</button>
+                <button class="filter-tab" data-category="ecommerce">eCommerce</button>
+                <button class="filter-tab" data-category="business">Business</button>
+                <button class="filter-tab" data-category="portfolio">Portfolio</button>
+                <button class="filter-tab" data-category="landing">Landing Pages</button>
+            </div>
+
+            <div class="sort-filter">
+                <div class="sort-options">
+                    <label>Sort by:</label>
+                    <select id="sortSelect">
+                        <option value="popular">Most Popular</option>
+                        <option value="newest">Newest</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="rating">Highest Rated</option>
+                    </select>
+                </div>
+                <div class="view-toggle">
+                    <button class="view-btn active" data-view="grid"><i class="fa-solid fa-grid-2"></i></button>
+                    <button class="view-btn" data-view="list"><i class="fa-solid fa-list"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Templates -->
+    <section class="featured-templates animate-section">
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fa-solid fa-star"></i> Featured Templates</h2>
+                <p>Hand-picked premium templates by our design experts</p>
+            </div>
+            
+            <div class="templates-grid">
+                <div class="template-card featured" data-category="ecommerce">
+                    <div class="template-preview">
+                        <img src="../images/template 1.jpg" alt="Modern eCommerce Template">
+                        <div class="template-overlay">
+                            <button class="preview-btn"><i class="fa-solid fa-eye"></i> Live Preview</button>
+                            <button class="details-btn"><i class="fa-solid fa-info-circle"></i> Details</button>
+                        </div>
+                        <div class="template-badge">Featured</div>
+                    </div>
+                    <div class="template-info">
+                        <h3>Modern eCommerce Pro</h3>
+                        <p>Professional online store with stunning design</p>
+                        <div class="template-meta">
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <span>4.9 (127 reviews)</span>
+                            </div>
+                            <div class="template-category">
+                                <span class="category-tag ecommerce">eCommerce</span>
+                            </div>
+                        </div>
+                        <div class="template-footer">
+                            <div class="price">
+                                <span class="current-price">₹2,499</span>
+                                <span class="original-price">₹4,999</span>
+                            </div>
+                            <button class="add-to-cart-btn">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="template-card" data-category="business">
+                    <div class="template-preview">
+                        <img src="../images/template 2.jpg" alt="Corporate Business Template">
+                        <div class="template-overlay">
+                            <button class="preview-btn"><i class="fa-solid fa-eye"></i> Live Preview</button>
+                            <button class="details-btn"><i class="fa-solid fa-info-circle"></i> Details</button>
+                        </div>
+                    </div>
+                    <div class="template-info">
+                        <h3>Corporate Business Suite</h3>
+                        <p>Professional business website template</p>
+                        <div class="template-meta">
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o"></i>
+                                <span>4.7 (89 reviews)</span>
+                            </div>
+                            <div class="template-category">
+                                <span class="category-tag business">Business</span>
+                            </div>
+                        </div>
+                        <div class="template-footer">
+                            <div class="price">
+                                <span class="current-price">₹1,999</span>
+                            </div>
+                            <button class="add-to-cart-btn">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="template-card" data-category="portfolio">
+                    <div class="template-preview">
+                        <img src="../images/template 3.jpg" alt="Creative Portfolio Template">
+                        <div class="template-overlay">
+                            <button class="preview-btn"><i class="fa-solid fa-eye"></i> Live Preview</button>
+                            <button class="details-btn"><i class="fa-solid fa-info-circle"></i> Details</button>
+                        </div>
+                        <div class="template-badge">Best Seller</div>
+                    </div>
+                    <div class="template-info">
+                        <h3>Creative Portfolio Studio</h3>
+                        <p>Showcase your work with style</p>
+                        <div class="template-meta">
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <span>5.0 (203 reviews)</span>
+                            </div>
+                            <div class="template-category">
+                                <span class="category-tag portfolio">Portfolio</span>
+                            </div>
+                        </div>
+                        <div class="template-footer">
+                            <div class="price">
+                                <span class="current-price">₹3,999</span>
+                            </div>
+                            <button class="add-to-cart-btn">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="template-card" data-category="landing">
+                    <div class="template-preview">
+                        <img src="../images/template 4.jpg" alt="Landing Page Template">
+                        <div class="template-overlay">
+                            <button class="preview-btn"><i class="fa-solid fa-eye"></i> Live Preview</button>
+                            <button class="details-btn"><i class="fa-solid fa-info-circle"></i> Details</button>
+                        </div>
+                    </div>
+                    <div class="template-info">
+                        <h3>Conversion Landing Pages</h3>
+                        <p>High-converting landing page designs</p>
+                        <div class="template-meta">
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o"></i>
+                                <span>4.8 (156 reviews)</span>
+                            </div>
+                            <div class="template-category">
+                                <span class="category-tag landing">Landing</span>
+                            </div>
+                        </div>
+                        <div class="template-footer">
+                            <div class="price">
+                                <span class="current-price">₹2,799</span>
+                            </div>
+                            <button class="add-to-cart-btn">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- All Templates -->
+    <section class="all-templates animate-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>All Templates</h2>
+                <div class="results-info">
+                    <span id="resultsCount">Showing 1-12 of 5,247 results</span>
+                </div>
+            </div>
+
+            <div class="templates-grid" id="allTemplatesGrid">
+                <!-- More template cards will be loaded here -->
+                <div class="template-card" data-category="wordpress">
+                    <div class="template-preview">
+                        <img src="../images/template 5.jpg" alt="WordPress Blog Template">
+                        <div class="template-overlay">
+                            <button class="preview-btn"><i class="fa-solid fa-eye"></i> Live Preview</button>
+                            <button class="details-btn"><i class="fa-solid fa-info-circle"></i> Details</button>
+                        </div>
+                    </div>
+                    <div class="template-info">
+                        <h3>WordPress Blog Pro</h3>
+                        <p>Perfect for bloggers and content creators</p>
+                        <div class="template-meta">
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o"></i>
+                                <span>4.6 (94 reviews)</span>
+                            </div>
+                            <div class="template-category">
+                                <span class="category-tag wordpress">WordPress</span>
+                            </div>
+                        </div>
+                        <div class="template-footer">
+                            <div class="price">
+                                <span class="current-price">₹1,799</span>
+                            </div>
+                            <button class="add-to-cart-btn">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="template-card" data-category="html">
+                    <div class="template-preview">
+                        <img src="../images/template 6.jpg" alt="HTML5 Agency Template">
+                        <div class="template-overlay">
+                            <button class="preview-btn"><i class="fa-solid fa-eye"></i> Live Preview</button>
+                            <button class="details-btn"><i class="fa-solid fa-info-circle"></i> Details</button>
+                        </div>
+                    </div>
+                    <div class="template-info">
+                        <h3>Agency HTML5 Template</h3>
+                        <p>Modern responsive design for agencies</p>
+                        <div class="template-meta">
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <span>4.9 (167 reviews)</span>
+                            </div>
+                            <div class="template-category">
+                                <span class="category-tag html">HTML5</span>
+                            </div>
+                        </div>
+                        <div class="template-footer">
+                            <div class="price">
+                                <span class="current-price">₹2,299</span>
+                            </div>
+                            <button class="add-to-cart-btn">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="template-card" data-category="ecommerce">
+                    <div class="template-preview">
+                        <img src="../images/template 7.jpg" alt="Online Store Template">
+                        <div class="template-overlay">
+                            <button class="preview-btn"><i class="fa-solid fa-eye"></i> Live Preview</button>
+                            <button class="details-btn"><i class="fa-solid fa-info-circle"></i> Details</button>
+                        </div>
+                    </div>
+                    <div class="template-info">
+                        <h3>Digital Store Template</h3>
+                        <p>Complete eCommerce solution</p>
+                        <div class="template-meta">
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <span>4.8 (212 reviews)</span>
+                            </div>
+                            <div class="template-category">
+                                <span class="category-tag ecommerce">eCommerce</span>
+                            </div>
+                        </div>
+                        <div class="template-footer">
+                            <div class="price">
+                                <span class="current-price">₹3,499</span>
+                            </div>
+                            <button class="add-to-cart-btn">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="template-card" data-category="business">
+                    <div class="template-preview">
+                        <img src="../images/template 8.jpg" alt="Business Website Template">
+                        <div class="template-overlay">
+                            <button class="preview-btn"><i class="fa-solid fa-eye"></i> Live Preview</button>
+                            <button class="details-btn"><i class="fa-solid fa-info-circle"></i> Details</button>
+                        </div>
+                        <div class="template-badge">New</div>
+                    </div>
+                    <div class="template-info">
+                        <h3>Business Pro Template</h3>
+                        <p>Professional business website</p>
+                        <div class="template-meta">
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o"></i>
+                                <span>4.7 (78 reviews)</span>
+                            </div>
+                            <div class="template-category">
+                                <span class="category-tag business">Business</span>
+                            </div>
+                        </div>
+                        <div class="template-footer">
+                            <div class="price">
+                                <span class="current-price">₹2,199</span>
+                            </div>
+                            <button class="add-to-cart-btn">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="template-card" data-category="portfolio">
+                    <div class="template-preview">
+                        <img src="../images/template 9.jpg" alt="Designer Portfolio Template">
+                        <div class="template-overlay">
+                            <button class="preview-btn"><i class="fa-solid fa-eye"></i> Live Preview</button>
+                            <button class="details-btn"><i class="fa-solid fa-info-circle"></i> Details</button>
+                        </div>
+                    </div>
+                    <div class="template-info">
+                        <h3>Designer Portfolio</h3>
+                        <p>Showcase your creative work</p>
+                        <div class="template-meta">
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <span>5.0 (143 reviews)</span>
+                            </div>
+                            <div class="template-category">
+                                <span class="category-tag portfolio">Portfolio</span>
+                            </div>
+                        </div>
+                        <div class="template-footer">
+                            <div class="price">
+                                <span class="current-price">₹1,899</span>
+                            </div>
+                            <button class="add-to-cart-btn">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="template-card" data-category="landing">
+                    <div class="template-preview">
+                        <img src="../images/template 10.jpg" alt="Startup Landing Template">
+                        <div class="template-overlay">
+                            <button class="preview-btn"><i class="fa-solid fa-eye"></i> Live Preview</button>
+                            <button class="details-btn"><i class="fa-solid fa-info-circle"></i> Details</button>
+                        </div>
+                    </div>
+                    <div class="template-info">
+                        <h3>Startup Landing Page</h3>
+                        <p>Perfect for startups and launches</p>
+                        <div class="template-meta">
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o"></i>
+                                <span>4.8 (185 reviews)</span>
+                            </div>
+                            <div class="template-category">
+                                <span class="category-tag landing">Landing</span>
+                            </div>
+                        </div>
+                        <div class="template-footer">
+                            <div class="price">
+                                <span class="current-price">₹2,599</span>
+                            </div>
+                            <button class="add-to-cart-btn">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                            
+
+                <div class="template-card" data-category="landing">
+                    <div class="template-preview">
+                        <img src="../images/template 1.jpg" alt="Landing Page Template">
+                        <div class="template-overlay">
+                            <button class="preview-btn"><i class="fa-solid fa-eye"></i> Live Preview</button>
+                            <button class="details-btn"><i class="fa-solid fa-info-circle"></i> Details</button>
+                        </div>
+                        <div class="template-badge">New</div>
+                    </div>
+                    <div class="template-info">
+                        <h3>App Landing - Product Launch</h3>
+                        <p>High-converting landing page</p>
+                        <div class="template-meta">
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <span>4.9 (42 reviews)</span>
+                            </div>
+                            <div class="template-category">
+                                <span class="category-tag landing">Landing</span>
+                            </div>
+                        </div>
+                        <div class="template-footer">
+                            <div class="price">
+                                <span class="current-price">₹1,299</span>
+                            </div>
+                            <button class="add-to-cart-btn">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="template-card" data-category="wordpress">
+                    <div class="template-preview">
+                        <img src="../images/template 2.jpg" alt="Blog WordPress Theme">
+                        <div class="template-overlay">
+                            <button class="preview-btn"><i class="fa-solid fa-eye"></i> Live Preview</button>
+                            <button class="details-btn"><i class="fa-solid fa-info-circle"></i> Details</button>
+                        </div>
+                    </div>
+                    <div class="template-info">
+                        <h3>Modern Blog - WordPress Theme</h3>
+                        <p>Beautiful blogging platform</p>
+                        <div class="template-meta">
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o"></i>
+                                <span>4.5 (98 reviews)</span>
+                            </div>
+                            <div class="template-category">
+                                <span class="category-tag wordpress">WordPress</span>
+                            </div>
+                        </div>
+                        <div class="template-footer">
+                            <div class="price">
+                                <span class="current-price">₹1,999</span>
+                            </div>
+                            <button class="add-to-cart-btn">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="template-card" data-category="html">
+                    <div class="template-preview">
+                        <img src="../images/template 3.jpg" alt="Restaurant HTML Template">
+                        <div class="template-overlay">
+                            <button class="preview-btn"><i class="fa-solid fa-eye"></i> Live Preview</button>
+                            <button class="details-btn"><i class="fa-solid fa-info-circle"></i> Details</button>
+                        </div>
+                    </div>
+                    <div class="template-info">
+                        <h3>Restaurant - HTML5 Template</h3>
+                        <p>Perfect for restaurants and cafes</p>
+                        <div class="template-meta">
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <span>4.8 (165 reviews)</span>
+                            </div>
+                            <div class="template-category">
+                                <span class="category-tag html">HTML5</span>
+                            </div>
+                        </div>
+                        <div class="template-footer">
+                            <div class="price">
+                                <span class="current-price">₹2,199</span>
+                            </div>
+                            <button class="add-to-cart-btn">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="load-more">
+                <button class="load-more-btn">
+                    <i class="fa-solid fa-arrow-down"></i>
+                    Load More Templates
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose-us animate-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose Our Templates?</h2>
+                <p>Professional quality, affordable prices, and excellent support</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h3>Clean Code</h3>
+                    <p>All templates are built with clean, well-structured code following industry standards</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-mobile-alt"></i>
+                    </div>
+                    <h3>Fully Responsive</h3>
+                    <p>Every template looks perfect on all devices - desktop, tablet, and mobile</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Get help when you need it with our dedicated customer support team</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-sync-alt"></i>
+                    </div>
+                    <h3>Regular Updates</h3>
+                    <p>Keep your templates fresh with regular updates and new features</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter-section animate-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Get New Templates First</h2>
+                <p>Subscribe to our newsletter and be the first to know about new releases and exclusive deals</p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address">
+                    <button>Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer will be loaded here -->
+    <div id="footer-placeholder"></div>
+
+    <script src="../js/nav-include.js"></script>
+    <script src="templates.js"></script>
+    <script src="../js/add-to-cart.js"></script>
+</body>
+</html>
