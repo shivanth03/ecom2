@@ -5,6 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ecomshop - Book Store Website</title>
+    
+    <!-- Prevent scroll restoration -->
+    <script>
+      if (history.scrollRestoration) {
+        history.scrollRestoration = 'manual';
+      }
+      
+      // Force scroll to top immediately
+      window.addEventListener('beforeunload', () => {
+        window.scrollTo(0, 0);
+      });
+      
+      // Scroll to top on page load
+      window.addEventListener('load', () => {
+        setTimeout(() => window.scrollTo(0, 0), 10);
+      });
+      
+      // Also handle page refresh
+      document.addEventListener('DOMContentLoaded', () => {
+        window.scrollTo(0, 0);
+      });
+    </script>
+    
     <link rel="stylesheet" href="css/style.css" />
     <!--- google font link-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,6 +41,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
 <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
 <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
@@ -37,16 +62,65 @@
 
   </head>
   <body>
-    <script>
-      // Immediately scroll to top on page load
-      if (window.history.scrollRestoration) {
-        window.history.scrollRestoration = 'manual';
-      }
-      window.scrollTo(0, 0);
-    </script>
-    
     <!-- Header will be loaded here -->
-    <div id="header-placeholder"></div>
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <div class="img">
+            <img id="header-logo" src="images/logo.png" alt="Ecomshop Logo" />
+          </div>
+          <div class="logo-header">
+            <h4><a id="home-link" href="index.html">Ecomshop</a></h4>
+            <small>Your Ultimate Book Destination</small>
+          </div>
+        </div>
+        
+        <ul class="nav-list">
+          <div class="logo mobile-logo">
+            <div class="title">
+              <div class="img">
+                <img id="mobile-logo" src="images/logo.png" alt="Ecomshop Logo" />
+              </div>
+              <div class="logo-header">
+                <h4><a id="mobile-home-link" href="index.html">Ecomshop</a></h4>
+                <small>Your Ultimate Book Destination</small>
+              </div>
+            </div>
+            <button class="close"><i class="fa-solid fa-xmark"></i></button>
+          </div>
+          
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Pages/book-filter.html">Ebooks</a></li>
+          <li><a href="Pages/templates.html">Templates</a></li>
+          <li><a href="Pages/book-filter.html">Software</a></li>
+          <li><a href="Pages/book-filter.html">Bundles</a></li>
+          <li><a href="Pages/contact.html">Contact</a></li>
+          
+          <div class="header-right">
+            <div class="auth-buttons">
+              <button class="login-btn"><a href="Pages/login.html">Log In</a></button>
+              <button class="signup-btn">
+                <i class="fa-solid fa-user"></i>
+                <a href="Pages/registration.html">Sign Up</a>
+              </button>
+            </div>
+            
+            <div class="cart-icon">
+              <a href="Pages/cart-item.html">
+                <i class="fa-solid fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+              </a>
+            </div>
+          </div>
+        </ul>
+        
+        <div class="hamburger">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+      </nav>
+    </header>
 
     <section class="hero">
       <div class="main">
@@ -810,18 +884,174 @@
       <div class="circle-1"></div>
       <div class="circle-2"></div>
     </section>
+
+    <!-- Footer Section -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-content">
+          <!-- Company Info Section -->
+          <div class="footer-section company-info">
+            <div class="footer-logo">
+              <div class="logo-icon">
+                <img id="footer-logo" src="images/logo.png" alt="Ecomshop Logo" />
+              </div>
+              <div class="logo-text">
+                <h3>Ecomshop</h3>
+                <p>Your Ultimate Book Destination</p>
+              </div>
+            </div>
+            <div class="social-links">
+              <a href="#" class="social-icon facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#" class="social-icon twitter"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#" class="social-icon instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" class="social-icon linkedin"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+          </div>
+
+          <!-- Quick Links Section -->
+          <div class="footer-section quick-links">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="Pages/book-filter.html">Fiction & Literature</a></li>
+              <li><a href="Pages/book-filter.html">Science & Technology</a></li>
+              <li><a href="Pages/contact.html">Contact Us</a></li>
+              <li><a href="Pages/contact.html">Help Center</a></li>
+            </ul>
+          </div>
+
+          <!-- Account Section -->
+          <div class="footer-section account">
+            <h4>Account</h4>
+            <ul>
+              <li><a href="Pages/login.html">Sign In</a></li>
+              <li><a href="Pages/registration.html">Create Account</a></li>
+              <li><a href="Pages/cart-item.html">Shopping Cart</a></li>
+              <li><a href="Pages/checkout.html">Track Orders</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Section -->
+          <div class="footer-section contact-info">
+            <h4>Contact</h4>
+            <div class="contact-details">
+              <div class="contact-item">
+                <i class="fa-solid fa-location-dot contact-icon"></i>
+                <span>Shivamogga, Karnataka, India</span>
+              </div>
+              <div class="contact-item">
+                <i class="fa-solid fa-phone contact-icon"></i>
+                <span>+91 98765 43210</span>
+              </div>
+              <div class="contact-item">
+                <i class="fa-solid fa-envelope contact-icon"></i>
+                <span>support@ecomshop.in</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+          <div class="footer-bottom-content">
+            <div class="copyright-section">
+              <p>&copy; 2024 Ecomshop. All Rights Reserved.</p>
+              <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+              </div>
+            </div>
+            <div class="payment-section">
+              <span class="payment-text">We Accept:</span>
+              <div class="payment-icons">
+                <div class="payment-icon visa"></div>
+                <div class="payment-icon mastercard"></div>
+                <div class="payment-icon paypal"></div>
+                <div class="payment-icon gpay"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button class="back-to-top"><i class="fa-solid fa-chevron-up"></i></button>
     
-    <!-- Footer will be loaded here -->
-    <div id="footer-placeholder"></div>
-    
-    <script src="js/nav-include.js"></script>
+    <script src="js/back-to-top.js"></script>
     <script src="js/animations.js"></script>
+    
+    <!-- Header JavaScript -->
+    <script>
+    // Hamburger menu functionality
+    let hamburgerbtn = document.querySelector(".hamburger");
+    let nav_list = document.querySelector(".nav-list");
+    let closebtn = document.querySelector(".close");
+
+    if (hamburgerbtn && nav_list && closebtn) {
+      hamburgerbtn.addEventListener("click", () => {
+        nav_list.classList.add("active");
+      });
+      closebtn.addEventListener("click", () => {
+        nav_list.classList.remove("active");
+      });
+      
+      // Close menu when clicking outside
+      document.addEventListener("click", (e) => {
+        if (!nav_list.contains(e.target) && !hamburgerbtn.contains(e.target)) {
+          nav_list.classList.remove("active");
+        }
+      });
+    }
+
+    // Cart functionality
+    function updateCartCount() {
+      let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+      let cartCount = document.querySelector('.cart-count');
+      if (cartCount) {
+        cartCount.textContent = cartItems.length;
+      }
+    }
+
+    // Update cart count on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      updateCartCount();
+    });
+
+    // Listen for cart updates
+    window.addEventListener('storage', updateCartCount);
+    </script>
+    
+    <!-- Footer JavaScript -->
+    <script>
+    // Back to top button functionality  
+    let backbtn = document.querySelector(".back-to-top");
+    if (backbtn) {
+      const scrollBtnDisplay = function () {
+        window.scrollY > 100
+          ? backbtn.classList.add("show")
+          : backbtn.classList.remove("show");
+      };
+      window.addEventListener("scroll", scrollBtnDisplay);
+
+      const scrollWindow = function () {  
+        if (window.scrollY != 0) {
+          setTimeout(function () {
+            window.scrollTo(0, window.scrollY - 50);
+            scrollWindow();
+          }, 10);
+        }
+      };
+      backbtn.addEventListener("click", scrollWindow);
+    }
+    </script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
     <script src="js/script.js"></script>
     <script src="js/repeat-js.js"></script>
     <script src="js/add-to-cart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
   </body>
 </html>
 

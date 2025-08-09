@@ -5,6 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ecomshop - Book Store Website</title>
+    
+    <!-- Prevent scroll restoration -->
+    <script>
+      if (history.scrollRestoration) {
+        history.scrollRestoration = 'manual';
+      }
+      
+      // Force scroll to top immediately
+      window.addEventListener('beforeunload', () => {
+        window.scrollTo(0, 0);
+      });
+      
+      // Scroll to top on page load
+      window.addEventListener('load', () => {
+        setTimeout(() => window.scrollTo(0, 0), 10);
+      });
+      
+      // Also handle page refresh
+      document.addEventListener('DOMContentLoaded', () => {
+        window.scrollTo(0, 0);
+      });
+    </script>
+    
     <link rel="stylesheet" href="css/style.css" />
     <!--- google font link-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -39,40 +62,60 @@
 
   </head>
   <body>
+    <!-- Header will be loaded here -->
     <header>
       <nav class="navbar">
         <div class="logo">
           <div class="img">
-            <img src="images/logo.png" alt="" />
+            <img id="header-logo" src="images/logo.png" alt="Ecomshop Logo" />
           </div>
           <div class="logo-header">
-            <h4><a href="index.html">Ecomshop</a></h4>
-            <small>Book Store Website</small>
+            <h4><a id="home-link" href="index.html">Ecomshop</a></h4>
+            <small>Your Ultimate Book Destination</small>
           </div>
         </div>
+        
         <ul class="nav-list">
-          <div class="logo">
+          <div class="logo mobile-logo">
             <div class="title">
               <div class="img">
-                <img src="images/logo.png" alt="" />
+                <img id="mobile-logo" src="images/logo.png" alt="Ecomshop Logo" />
               </div>
               <div class="logo-header">
-                <h4><a href="index.html">Ecomshop</a></h4>
-                <small>Book Store Website</small>
+                <h4><a id="mobile-home-link" href="index.html">Ecomshop</a></h4>
+                <small>Your Ultimate Book Destination</small>
               </div>
             </div>
             <button class="close"><i class="fa-solid fa-xmark"></i></button>
           </div>
+          
           <li><a href="index.html">Home</a></li>
-          <li><a href="pages/service.html">Service</a></li>
-          <li><a href="pages/contact.html">Contact</a></li>
-          <li><a href="Pages/book-filter.html">Books</a></li>
-          <button class="login"><a href="pages/login.html">Log In</a></button>
-          <button class="signup">
-            <i class="fa-solid fa-user"></i><a href="pages/registration.html">Sign Up</a>
-          </button>
+          <li><a href="Pages/book-filter.html">Ebooks</a></li>
+          <li><a href="Pages/templates.html">Templates</a></li>
+          <li><a href="Pages/book-filter.html">Software</a></li>
+          <li><a href="Pages/book-filter.html">Bundles</a></li>
+          <li><a href="Pages/contact.html">Contact</a></li>
+          
+          <div class="header-right">
+            <div class="auth-buttons">
+              <button class="login-btn"><a href="Pages/login.html">Log In</a></button>
+              <button class="signup-btn">
+                <i class="fa-solid fa-user"></i>
+                <a href="Pages/registration.html">Sign Up</a>
+              </button>
+            </div>
+            
+            <div class="cart-icon">
+              <a href="Pages/cart-item.html">
+                <i class="fa-solid fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+              </a>
+            </div>
+          </div>
         </ul>
+        
         <div class="hamburger">
+          <div class="line"></div>
           <div class="line"></div>
           <div class="line"></div>
         </div>
@@ -842,103 +885,166 @@
       <div class="circle-2"></div>
     </section>
 
+    <!-- Footer Section -->
     <footer>
-      <div class="container">
-        <div class="logo-description">
-          <div class="logo">
-            <div class="img">
-              <img src="images/logo.png" alt="" />
+      <div class="footer-container">
+        <div class="footer-content">
+          <!-- Company Info Section -->
+          <div class="footer-section company-info">
+            <div class="footer-logo">
+              <div class="logo-icon">
+                <img id="footer-logo" src="images/logo.png" alt="Ecomshop Logo" />
+              </div>
+              <div class="logo-text">
+                <h3>Ecomshop</h3>
+                <p>Your Ultimate Book Destination</p>
+              </div>
             </div>
-            <div class="title">
-              <h4>Ecomshop</h4>
-              <small>Book Store Website</small>
+            <div class="social-links">
+              <a href="#" class="social-icon facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#" class="social-icon twitter"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#" class="social-icon instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" class="social-icon linkedin"><i class="fa-brands fa-linkedin-in"></i></a>
             </div>
           </div>
-          <div class="logo-body">
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam
-              voluptates eius quasi reiciendis recusandae provident veritatis
-              sequi, dolores architecto dolor possimus quos
-            </p>
-          </div>
-          <div class="social-links">
-            <h4>Follow Us</h4>
-            <ul class="links">
-              <li>
-                <a href=""><i class="fa-brands fa-facebook-f"></i></a>
-              </li>
-              <li>
-                <a href=""><i class="fa-brands fa-youtube"></i></a>
-              </li>
-              <li>
-                <a href=""><i class="fa-brands fa-twitter"></i></a>
-              </li>
-              <li>
-                <a href=""><i class="fa-brands fa-linkedin"></i></a>
-              </li>
-              <li>
-                <a href=""><i class="fa-brands fa-instagram"></i></a>
-              </li>
+
+          <!-- Quick Links Section -->
+          <div class="footer-section quick-links">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="Pages/book-filter.html">Fiction & Literature</a></li>
+              <li><a href="Pages/book-filter.html">Science & Technology</a></li>
+              <li><a href="Pages/contact.html">Contact Us</a></li>
+              <li><a href="Pages/contact.html">Help Center</a></li>
             </ul>
           </div>
-        </div>
-        <div class="categories list">
-          <h4>Book Categories</h4>
-          <ul>
-            <li><a href="Pages/book-filter.html">Action</a></li>
-            <li><a href="Pages/book-filter.html">Adventure</a></li>
-            <li><a href="Pages/book-filter.html">Comedy</a></li>
-            <li><a href="Pages/book-filter.html">Crime</a></li>
-            <li><a href="Pages/book-filter.html">Drama</a></li>
-            <li><a href="Pages/book-filter.html">Fantasy</a></li>
-            <li><a href="Pages/book-filter.html">Horror</a></li>
-          </ul>
-        </div>
-        <div class="quick-links list">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="index.html">About Us</a></li>
-            <li><a href="pages/contact.html">Contact Us</a></li>
-            <li><a href="pages/book-filter.html">Products</a></li>
-            <li><a href="pages/login.html">Login</a></li>
-            <li><a href="pages/registration.html">Sign Up</a></li>
-            <li><a href="pages/cart-item.html">Cart</a></li>
-            <li><a href="pages/checkout.html">Checkout</a></li>
-          </ul>
-        </div>
-        <div class="our-store list">
-          <h4>Our Store</h4>
-          <div class="map" style="margin-top: 1rem">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6310.594819201665!2d-122.42768319999999!3d37.73616639999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f7e60a337d5f5%3A0xfa0bb626904e5ab2!2z4KSV4KWJ4KSy4KWH4KScIOCkueCkv-Cksiwg4KS44KS-4KSoIOCkq-CljeCksOCkvuCkguCkuOCkv-CkuOCljeCkleCliywg4KSV4KWI4KSy4KWA4KSr4KWL4KSw4KWN4KSo4KS_4KSv4KS-LCDgpK_gpYLgpKjgpL7gpIfgpJ_gpYfgpKEg4KS44KWN4KSf4KWH4KSf4KWN4oCN4KS4!5e0!3m2!1shi!2sin!4v1686917463994!5m2!1shi!2sin"
-              height="70"
-              style="width: 100%; border: none; border-radius: 5px"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
+
+          <!-- Account Section -->
+          <div class="footer-section account">
+            <h4>Account</h4>
+            <ul>
+              <li><a href="Pages/login.html">Sign In</a></li>
+              <li><a href="Pages/registration.html">Create Account</a></li>
+              <li><a href="Pages/cart-item.html">Shopping Cart</a></li>
+              <li><a href="Pages/checkout.html">Track Orders</a></li>
+            </ul>
           </div>
-          <ul>
-            <li>
-              <a href=""
-                ><i class="fa-solid fa-location-dot"></i>832 Thompson Drive,San
-                Fransisco CA 94 107,United States</a
-              >
-            </li>
-            <li>
-              <a href=""><i class="fa-solid fa-phone"></i>+12 1345678991</a>
-            </li>
-            <li>
-              <a href=""
-                ><i class="fa-solid fa-envelope"></i>support@bookoe.id</a
-              >
-            </li>
-          </ul>
+
+          <!-- Contact Section -->
+          <div class="footer-section contact-info">
+            <h4>Contact</h4>
+            <div class="contact-details">
+              <div class="contact-item">
+                <i class="fa-solid fa-location-dot contact-icon"></i>
+                <span>Shivamogga, Karnataka, India</span>
+              </div>
+              <div class="contact-item">
+                <i class="fa-solid fa-phone contact-icon"></i>
+                <span>+91 98765 43210</span>
+              </div>
+              <div class="contact-item">
+                <i class="fa-solid fa-envelope contact-icon"></i>
+                <span>support@ecomshop.in</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+          <div class="footer-bottom-content">
+            <div class="copyright-section">
+              <p>&copy; 2024 Ecomshop. All Rights Reserved.</p>
+              <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+              </div>
+            </div>
+            <div class="payment-section">
+              <span class="payment-text">We Accept:</span>
+              <div class="payment-icons">
+                <div class="payment-icon visa"></div>
+                <div class="payment-icon mastercard"></div>
+                <div class="payment-icon paypal"></div>
+                <div class="payment-icon gpay"></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
+
+    <!-- Back to top button -->
     <button class="back-to-top"><i class="fa-solid fa-chevron-up"></i></button>
+    
     <script src="js/back-to-top.js"></script>
+    <script src="js/animations.js"></script>
+    
+    <!-- Header JavaScript -->
+    <script>
+    // Hamburger menu functionality
+    let hamburgerbtn = document.querySelector(".hamburger");
+    let nav_list = document.querySelector(".nav-list");
+    let closebtn = document.querySelector(".close");
+
+    if (hamburgerbtn && nav_list && closebtn) {
+      hamburgerbtn.addEventListener("click", () => {
+        nav_list.classList.add("active");
+      });
+      closebtn.addEventListener("click", () => {
+        nav_list.classList.remove("active");
+      });
+      
+      // Close menu when clicking outside
+      document.addEventListener("click", (e) => {
+        if (!nav_list.contains(e.target) && !hamburgerbtn.contains(e.target)) {
+          nav_list.classList.remove("active");
+        }
+      });
+    }
+
+    // Cart functionality
+    function updateCartCount() {
+      let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+      let cartCount = document.querySelector('.cart-count');
+      if (cartCount) {
+        cartCount.textContent = cartItems.length;
+      }
+    }
+
+    // Update cart count on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      updateCartCount();
+    });
+
+    // Listen for cart updates
+    window.addEventListener('storage', updateCartCount);
+    </script>
+    
+    <!-- Footer JavaScript -->
+    <script>
+    // Back to top button functionality  
+    let backbtn = document.querySelector(".back-to-top");
+    if (backbtn) {
+      const scrollBtnDisplay = function () {
+        window.scrollY > 100
+          ? backbtn.classList.add("show")
+          : backbtn.classList.remove("show");
+      };
+      window.addEventListener("scroll", scrollBtnDisplay);
+
+      const scrollWindow = function () {  
+        if (window.scrollY != 0) {
+          setTimeout(function () {
+            window.scrollTo(0, window.scrollY - 50);
+            scrollWindow();
+          }, 10);
+        }
+      };
+      backbtn.addEventListener("click", scrollWindow);
+    }
+    </script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>

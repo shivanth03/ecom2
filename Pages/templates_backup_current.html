@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Professional Website Templates - Browse our collection of premium templates for businesses, portfolios, and e-commerce stores" />
-    <meta name="author" content="Ecomshop Template Store" />
+    <meta name="viewport" content="width=device-width,    </section>
+
+    <!-- Features Section -->ial-scale=1.0" />
     <title>Website Templates - Ecomshop Template Store</title>
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="templates.css" />
@@ -37,51 +37,46 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
-    
-    <!-- Prevent live reload issues -->
-    <script>
-        // Ensure DOM structure is ready for live reload
-        if (typeof window !== 'undefined') {
-            window.addEventListener('DOMContentLoaded', function() {
-                // DOM is ready
-            });
-        }
-    </script>
 </head>
 <body class="page-container">
-    <!-- Header Include -->
-    <div id="nav-placeholder"></div>
+    <script>
+        // Immediately scroll to top on page load and disable scroll restoration
+        if (window.history.scrollRestoration) {
+            window.history.scrollRestoration = 'manual';
+        }
+        
+        // Force scroll to top immediately
+        window.scrollTo(0, 0);
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+        
+        // Prevent any scroll during page load
+        document.addEventListener('DOMContentLoaded', function() {
+            window.scrollTo(0, 0);
+            setTimeout(() => {
+                window.scrollTo(0, 0);
+            }, 100);
+        });
+        
+        // Force scroll to top on page show (back button)
+        window.addEventListener('pageshow', function() {
+            window.scrollTo(0, 0);
+        });
+    </script>
 
-    <!-- Templates Banner Section -->
-    <section class="hero">
-      <div class="main">
-        <div class="content">
-          <small>Premium Templates</small>
-          <h2>Professional E-Commerce</h2>
-          <h5>Templates Collection</h5>
-          <p>
-            Discover our handpicked collection of premium e-commerce templates designed 
-            to help you create stunning online stores with ease and professionalism.
-          </p>
-          <div class="btns">
-            <button>Browse Templates<i class="fa-solid fa-arrow-right"></i></button>
-            <button>View Featured</button>
-          </div>
+    <!-- Enhanced Filter Section -->
+    <section class="template-filters fade-in-top-delay-2">
+        <div class="filter-container">
+            <h3>Filter Templates</h3>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-category="all">All Templates</button>
+                <button class="filter-btn" data-category="bookstore">Bookstore</button>
+                <button class="filter-btn" data-category="fashion">Fashion</button>
+                <button class="filter-btn" data-category="electronics">Electronics</button>
+                <button class="filter-btn" data-category="food">Food & Grocery</button>
+                <button class="filter-btn" data-category="minimal">Minimal</button>
+            </div>
         </div>
-        <div class="img">
-          <img
-            src="../images/teenager-student-girl-yellow-pointing-finger-side-copy.png"
-            alt="Templates Collection"
-          />
-        </div>
-      </div>
-      <div class="square-dot">
-        <i class="fa-solid fa-square"></i>
-        <i class="fa-solid fa-square"></i>
-        <i class="fa-solid fa-square"></i>
-        <i class="fa-solid fa-square"></i>
-        <i class="fa-solid fa-square"></i>
-      </div>
     </section>
 
     <!-- Featured Templates Showcase -->
@@ -101,13 +96,13 @@
                             <h4>E-Commerce Pro</h4>
                             <p>Complete e-commerce solution with advanced features</p>
                             <div class="featured-buttons">
-                                <button class="preview-btn" data-template-id="1"><i class="fas fa-eye"></i> Live Preview</button>
+                                <button class="preview-btn"><i class="fas fa-eye"></i> Live Preview</button>
                                 <button class="download-btn"><i class="fas fa-download"></i> Download</button>
                             </div>
                         </div>
                     </div>
                     <div class="featured-badge premium">Premium</div>
-                    <div class="template-price">₹5,999</div>
+                    <div class="template-price">$79</div>
                 </div>
                 <div class="featured-info">
                     <div class="featured-rating">
@@ -135,13 +130,13 @@
                             <h4>Fashion Store</h4>
                             <p>Elegant fashion template with lookbook gallery</p>
                             <div class="featured-buttons">
-                                <button class="preview-btn" data-template-id="2"><i class="fas fa-eye"></i> Live Preview</button>
+                                <button class="preview-btn"><i class="fas fa-eye"></i> Live Preview</button>
                                 <button class="download-btn"><i class="fas fa-download"></i> Download</button>
                             </div>
                         </div>
                     </div>
                     <div class="featured-badge new">New</div>
-                    <div class="template-price">₹4,999</div>
+                    <div class="template-price">$65</div>
                 </div>
                 <div class="featured-info">
                     <div class="featured-rating">
@@ -169,12 +164,12 @@
                             <h4>Tech Store</h4>
                             <p>Professional electronics store with product compare</p>
                             <div class="featured-buttons">
-                                <button class="preview-btn" data-template-id="3"><i class="fas fa-eye"></i> Live Preview</button>
+                                <button class="preview-btn"><i class="fas fa-eye"></i> Live Preview</button>
                                 <button class="download-btn"><i class="fas fa-download"></i> Download</button>
                             </div>
                         </div>
                     </div>
-                    <div class="template-price">₹4,199</div>
+                    <div class="template-price">$55</div>
                 </div>
                 <div class="featured-info">
                     <div class="featured-rating">
@@ -191,21 +186,6 @@
                         <span class="tag">Reviews</span>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Enhanced Filter Section -->
-    <section class="template-filters fade-in-top-delay-3">
-        <div class="filter-container">
-            <h3>Filter Templates</h3>
-            <div class="filter-buttons">
-                <button class="filter-btn active" data-category="all">All Templates</button>
-                <button class="filter-btn" data-category="bookstore">Bookstore</button>
-                <button class="filter-btn" data-category="fashion">Fashion</button>
-                <button class="filter-btn" data-category="electronics">Electronics</button>
-                <button class="filter-btn" data-category="food">Food & Grocery</button>
-                <button class="filter-btn" data-category="minimal">Minimal</button>
             </div>
         </div>
     </section>
@@ -243,7 +223,7 @@
         
         <div class="templates-container">
             <!-- Template 1 - Modern Bookstore -->
-            <div class="template-card" data-category="bookstore" data-template-id="1">
+            <div class="template-card" data-category="bookstore">
                 <div class="template-image">
                     <img src="../images/template 1.jpg" alt="Modern Bookstore Template">
                     <div class="template-overlay">
@@ -268,15 +248,15 @@
                             <span>4.8 (124 reviews)</span>
                         </div>
                         <div class="template-price">
-                            <span class="price-current">₹3,799</span>
-                            <span class="price-old">₹5,999</span>
+                            <span class="price-current">$49</span>
+                            <span class="price-old">$79</span>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Template 2 - Fashion Store -->
-            <div class="template-card" data-category="fashion" data-template-id="2">
+            <div class="template-card" data-category="fashion">
                 <div class="template-image">
                     <img src="../images/template 2.jpg" alt="Fashion E-Commerce Template">
                     <div class="template-overlay">
@@ -301,15 +281,15 @@
                             <span>4.9 (89 reviews)</span>
                         </div>
                         <div class="template-price">
-                            <span class="price-current">₹4,799</span>
-                            <span class="price-old">₹7,199</span>
+                            <span class="price-current">$59</span>
+                            <span class="price-old">$89</span>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Template 3 - Electronics Store -->
-            <div class="template-card" data-category="electronics" data-template-id="3">
+            <div class="template-card" data-category="electronics">
                 <div class="template-image">
                     <img src="../images/template 3.jpg" alt="Electronics Store Template">
                     <div class="template-overlay">
@@ -333,15 +313,15 @@
                             <span>4.7 (156 reviews)</span>
                         </div>
                         <div class="template-price">
-                            <span class="price-current">₹5,599</span>
-                            <span class="price-old">₹7,999</span>
+                            <span class="price-current">$69</span>
+                            <span class="price-old">$99</span>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Template 4 - Minimal Store -->
-            <div class="template-card" data-category="minimal" data-template-id="4">
+            <div class="template-card" data-category="minimal">
                 <div class="template-image">
                     <img src="../images/template 4.jpg" alt="Minimal Store Template">
                     <div class="template-overlay">
@@ -366,15 +346,15 @@
                             <span>4.9 (203 reviews)</span>
                         </div>
                         <div class="template-price">
-                            <span class="price-current">₹3,199</span>
-                            <span class="price-old">₹4,799</span>
+                            <span class="price-current">$39</span>
+                            <span class="price-old">$59</span>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Template 5 - Food Store -->
-            <div class="template-card" data-category="food" data-template-id="5">
+            <div class="template-card" data-category="food">
                 <div class="template-image">
                     <img src="../images/template 5.jpg" alt="Food & Grocery Template">
                     <div class="template-overlay">
@@ -398,15 +378,15 @@
                             <span>4.6 (97 reviews)</span>
                         </div>
                         <div class="template-price">
-                            <span class="price-current">₹3,699</span>
-                            <span class="price-old">₹5,599</span>
+                            <span class="price-current">$45</span>
+                            <span class="price-old">$69</span>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Template 6 - Creative Bookstore -->
-            <div class="template-card" data-category="bookstore" data-template-id="1">
+            <div class="template-card" data-category="bookstore">
                 <div class="template-image">
                     <img src="../images/template 6.jpg" alt="Creative Bookstore Template">
                     <div class="template-overlay">
@@ -431,15 +411,15 @@
                             <span>4.8 (134 reviews)</span>
                         </div>
                         <div class="template-price">
-                            <span class="price-current">₹4,499</span>
-                            <span class="price-old">₹6,399</span>
+                            <span class="price-current">$55</span>
+                            <span class="price-old">$79</span>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Additional Templates -->
-            <div class="template-card" data-category="fashion" data-template-id="2">
+            <div class="template-card" data-category="fashion">
                 <div class="template-image">
                     <img src="../images/template 7.jpg" alt="Luxury Fashion Template">
                     <div class="template-overlay">
@@ -463,14 +443,14 @@
                             <span>4.9 (78 reviews)</span>
                         </div>
                         <div class="template-price">
-                            <span class="price-current">₹6,399</span>
-                            <span class="price-old">₹9,599</span>
+                            <span class="price-current">$79</span>
+                            <span class="price-old">$119</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="template-card" data-category="electronics" data-template-id="3">
+            <div class="template-card" data-category="electronics">
                 <div class="template-image">
                     <img src="../images/template 8.jpg" alt="Modern Electronics Template">
                     <div class="template-overlay">
@@ -494,14 +474,14 @@
                             <span>4.7 (142 reviews)</span>
                         </div>
                         <div class="template-price">
-                            <span class="price-current">₹5,299</span>
-                            <span class="price-old">₹7,699</span>
+                            <span class="price-current">$65</span>
+                            <span class="price-old">$95</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="template-card" data-category="minimal" data-template-id="4">
+            <div class="template-card" data-category="minimal">
                 <div class="template-image">
                     <img src="../images/template 9.jpg" alt="Ultra Minimal Template">
                     <div class="template-overlay">
@@ -525,14 +505,14 @@
                             <span>4.8 (167 reviews)</span>
                         </div>
                         <div class="template-price">
-                            <span class="price-current">₹2,899</span>
-                            <span class="price-old">₹4,499</span>
+                            <span class="price-current">$35</span>
+                            <span class="price-old">$55</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="template-card" data-category="food" data-template-id="5">
+            <div class="template-card" data-category="food">
                 <div class="template-image">
                     <img src="../images/template 10.jpg" alt="Restaurant Template">
                     <div class="template-overlay">
@@ -557,23 +537,11 @@
                             <span>4.9 (89 reviews)</span>
                         </div>
                         <div class="template-price">
-                            <span class="price-current">₹3,999</span>
-                            <span class="price-old">₹6,099</span>
+                            <span class="price-current">$49</span>
+                            <span class="price-old">$75</span>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        
-        <!-- Load More Button -->
-        <div class="load-more-container">
-            <button class="load-more-btn" id="loadMoreBtn">
-                <i class="fas fa-plus"></i>
-                Load More Templates
-            </button>
-            <div class="loading-spinner" id="loadingSpinner" style="display: none;">
-                <i class="fas fa-spinner fa-spin"></i>
-                Loading more templates...
             </div>
         </div>
     </section>
@@ -632,109 +600,301 @@
         </div>
     </section>
 
-    <!-- Footer Include -->
-    <div id="footer-placeholder"></div>
-
-    <!-- Template Preview Modal -->
-    <div id="templateModal" class="template-modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 id="modalTitle">Template Preview</h2>
-                <span class="modal-close">&times;</span>
+    <!-- CTA Section -->
+    <section class="template-cta">
+        <div class="cta-container">
+            <div class="cta-content">
+                <h2>Ready to Start Your E-Commerce Journey?</h2>
+                <p>Choose from our premium collection of templates and launch your online store today!</p>
+                <div class="cta-buttons">
+                    <button class="primary-btn large"><i class="fas fa-download"></i> Browse All Templates</button>
+                    <button class="secondary-btn large"><i class="fas fa-phone"></i> Contact Sales</button>
+                </div>
             </div>
-            <div class="modal-body">
-                <div class="modal-left">
-                    <div class="template-preview-image">
-                        <img id="modalImage" src="" alt="Template Preview">
+            <div class="cta-decorations">
+                <div class="cta-circle-1"></div>
+                <div class="cta-circle-2"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose-us">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose Our Templates?</h2>
+                <p>Professional, modern, and easy to use</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Clean Code</h3>
+                    <p>Modern, optimized, and SEO-ready templates built with best practices</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Fully Responsive</h3>
+                    <p>Perfect display on all devices - desktop, tablet, and mobile</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Fast Performance</h3>
+                    <p>Lightning-fast loading times for better user experience</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Expert help whenever you need assistance or guidance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Browse All Templates -->
+    <section class="templates-section fade-in-top-delay-6">
+        <!-- Templates Header with Sort Options -->
+        <div class="templates-header">
+            <div class="templates-header-content">
+                <div class="templates-title">
+                    <h2>Browse All Templates</h2>
+                    <p>Professional e-commerce templates for every business need</p>
+                </div>
+                <div class="templates-controls">
+                    <div class="view-options">
+                        <button class="view-btn active" data-view="grid">
+                            <i class="fas fa-th-large"></i>
+                        </button>
+                        <button class="view-btn" data-view="list">
+                            <i class="fas fa-list"></i>
+                        </button>
+                    </div>
+                    <div class="sort-options">
+                        <select id="sort-templates">
+                            <option value="popular">Most Popular</option>
+                            <option value="newest">Newest First</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="rating">Highest Rated</option>
+                        </select>
                     </div>
                 </div>
-                <div class="modal-right">
-                    <div class="template-details">
-                        <h3 id="modalTemplateTitle">Template Name</h3>
-                        <p id="modalDescription">Template description goes here...</p>
-                        
-                        <div class="template-features-modal">
-                            <h4>Features:</h4>
-                            <div id="modalFeatures" class="features-list">
-                                <!-- Features will be populated by JavaScript -->
-                            </div>
+            </div>
+        </div>
+        
+        <div class="templates-container">
+            <!-- Template 1 - Modern Bookstore -->
+            <div class="template-card" data-category="bookstore">
+                <div class="template-image">
+                    <img src="../images/template 4.jpg" alt="Modern Bookstore Template">
+                    <div class="template-overlay">
+                        <div class="overlay-buttons">
+                            <button class="preview-btn"><i class="fas fa-eye"></i> Preview</button>
+                            <button class="download-btn"><i class="fas fa-download"></i> Download</button>
                         </div>
-                        
-                        <div class="template-rating-modal">
-                            <div class="rating-stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <span id="modalRating">4.8 (124 reviews)</span>
+                    </div>
+                    <div class="template-badge">Premium</div>
+                </div>
+                <div class="template-info">
+                    <h4>Modern Bookstore</h4>
+                    <p>A sleek and modern bookstore template with advanced filtering and search capabilities.</p>
+                    <div class="template-features">
+                        <span class="feature-tag">Responsive</span>
+                        <span class="feature-tag">Modern UI</span>
+                        <span class="feature-tag">SEO Ready</span>
+                    </div>
+                    <div class="template-footer">
+                        <div class="template-rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.8 (124 reviews)</span>
                         </div>
-                        
-                        <div class="template-price-modal">
-                            <span class="current-price" id="modalCurrentPrice">₹3,799</span>
-                            <span class="old-price" id="modalOldPrice">₹5,999</span>
+                        <div class="template-price">
+                            <span class="price-current">$49</span>
+                            <span class="price-old">$79</span>
                         </div>
-                        
-                        <div class="modal-buttons">
-                            <button class="live-preview-btn" id="livePreviewBtn">
-                                <i class="fas fa-external-link-alt"></i>
-                                Live Preview
-                            </button>
-                            <button class="add-to-cart-btn" id="addToCartBtn">
-                                <i class="fas fa-shopping-cart"></i>
-                                Add to Cart
-                            </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Template 2 - Minimal Store -->
+            <div class="template-card" data-category="minimal">
+                <div class="template-image">
+                    <img src="../images/template 5.jpg" alt="Minimal Store Template">
+                    <div class="template-overlay">
+                        <div class="overlay-buttons">
+                            <button class="preview-btn"><i class="fas fa-eye"></i> Preview</button>
+                            <button class="download-btn"><i class="fas fa-download"></i> Download</button>
+                        </div>
+                    </div>
+                    <div class="template-badge new">New</div>
+                </div>
+                <div class="template-info">
+                    <h4>Minimal Store</h4>
+                    <p>Clean and minimal design perfect for modern businesses.</p>
+                    <div class="template-features">
+                        <span class="feature-tag">Minimal</span>
+                        <span class="feature-tag">Clean</span>
+                        <span class="feature-tag">Fast</span>
+                    </div>
+                    <div class="template-footer">
+                        <div class="template-rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.9 (89 reviews)</span>
+                        </div>
+                        <div class="template-price">
+                            <span class="price-current">$39</span>
+                            <span class="price-old">$59</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Template 3 - Food Store -->
+            <div class="template-card" data-category="food">
+                <div class="template-image">
+                    <img src="../images/template 6.jpg" alt="Food Store Template">
+                    <div class="template-overlay">
+                        <div class="overlay-buttons">
+                            <button class="preview-btn"><i class="fas fa-eye"></i> Preview</button>
+                            <button class="download-btn"><i class="fas fa-download"></i> Download</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="template-info">
+                    <h4>Organic Food Store</h4>
+                    <p>Perfect for organic food stores and grocery businesses.</p>
+                    <div class="template-features">
+                        <span class="feature-tag">Food & Grocery</span>
+                        <span class="feature-tag">Organic</span>
+                        <span class="feature-tag">Fresh UI</span>
+                    </div>
+                    <div class="template-footer">
+                        <div class="template-rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.7 (156 reviews)</span>
+                        </div>
+                        <div class="template-price">
+                            <span class="price-current">$45</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Template 4 - Beauty Store -->
+            <div class="template-card" data-category="fashion">
+                <div class="template-image">
+                    <img src="../images/template 7.jpg" alt="Beauty Store Template">
+                    <div class="template-overlay">
+                        <div class="overlay-buttons">
+                            <button class="preview-btn"><i class="fas fa-eye"></i> Preview</button>
+                            <button class="download-btn"><i class="fas fa-download"></i> Download</button>
+                        </div>
+                    </div>
+                    <div class="template-badge">Popular</div>
+                </div>
+                <div class="template-info">
+                    <h4>Beauty & Cosmetics</h4>
+                    <p>Elegant template designed for beauty and cosmetics stores.</p>
+                    <div class="template-features">
+                        <span class="feature-tag">Beauty</span>
+                        <span class="feature-tag">Elegant</span>
+                        <span class="feature-tag">Product Focus</span>
+                    </div>
+                    <div class="template-footer">
+                        <div class="template-rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.9 (203 reviews)</span>
+                        </div>
+                        <div class="template-price">
+                            <span class="price-current">$65</span>
+                            <span class="price-old">$95</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Template 5 - Electronics Pro -->
+            <div class="template-card" data-category="electronics">
+                <div class="template-image">
+                    <img src="../images/template 8.jpg" alt="Electronics Pro Template">
+                    <div class="template-overlay">
+                        <div class="overlay-buttons">
+                            <button class="preview-btn"><i class="fas fa-eye"></i> Preview</button>
+                            <button class="download-btn"><i class="fas fa-download"></i> Download</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="template-info">
+                    <h4>Electronics Pro</h4>
+                    <p>Advanced electronics template with product comparison features.</p>
+                    <div class="template-features">
+                        <span class="feature-tag">Electronics</span>
+                        <span class="feature-tag">Compare</span>
+                        <span class="feature-tag">Reviews</span>
+                    </div>
+                    <div class="template-footer">
+                        <div class="template-rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.8 (178 reviews)</span>
+                        </div>
+                        <div class="template-price">
+                            <span class="price-current">$75</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Template 6 - Book Library -->
+            <div class="template-card" data-category="bookstore">
+                <div class="template-image">
+                    <img src="../images/template 9.jpg" alt="Book Library Template">
+                    <div class="template-overlay">
+                        <div class="overlay-buttons">
+                            <button class="preview-btn"><i class="fas fa-eye"></i> Preview</button>
+                            <button class="download-btn"><i class="fas fa-download"></i> Download</button>
+                        </div>
+                    </div>
+                    <div class="template-badge">Trending</div>
+                </div>
+                <div class="template-info">
+                    <h4>Digital Library</h4>
+                    <p>Perfect for online bookstores and digital libraries.</p>
+                    <div class="template-features">
+                        <span class="feature-tag">Books</span>
+                        <span class="feature-tag">Digital</span>
+                        <span class="feature-tag">Library</span>
+                    </div>
+                    <div class="template-footer">
+                        <div class="template-rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.6 (145 reviews)</span>
+                        </div>
+                        <div class="template-price">
+                            <span class="price-current">$35</span>
+                            <span class="price-old">$55</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- Back to Top Button -->
     <button class="back-to-top"><i class="fas fa-arrow-up"></i></button>
 
     <!-- Scripts -->
-    <script src="../js/nav-include.js"></script>
     <script src="../js/script.js"></script>
     <script src="templates_enhanced.js"></script>
-    <script src="../js/load-more-templates.js"></script>
-    <script src="templates_modal.js"></script>
-    
-    <!-- Live Reload Compatibility Script -->
-    <script>
-        // Ensure proper document structure for Live Reload
-        if (typeof document !== 'undefined') {
-            // Add live reload compatibility
-            if (!document.querySelector('meta[name="livereload-port"]')) {
-                const meta = document.createElement('meta');
-                meta.name = 'livereload-port';
-                meta.content = '35729';
-                document.head.appendChild(meta);
-            }
-        }
-    </script>
-    
-    <!-- Scroll to top functionality -->
-    <script>
-        // Scroll to top functionality - moved to end to prevent live reload conflicts
-        if (window.history.scrollRestoration) {
-            window.history.scrollRestoration = 'manual';
-        }
-        
-        // Force scroll to top on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            window.scrollTo(0, 0);
-            setTimeout(() => {
-                window.scrollTo(0, 0);
-            }, 100);
-        });
-        
-        // Force scroll to top on page show (back button)
-        window.addEventListener('pageshow', function() {
-            window.scrollTo(0, 0);
-        });
-    </script>
 </body>
 </html>
