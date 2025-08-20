@@ -1830,6 +1830,8 @@
     background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
     border: 1px solid #cbd5e1;
     color: #64748b;
+}
+
 /* All Software Grid Styles */
 .all-software-grid {
     display: grid;
@@ -1837,11 +1839,9 @@
     gap: 25px;
     margin-bottom: 40px;
 }
-    }
-    
-    .trending-items {
-        justify-content: center;
-    }
+
+.trending-items {
+    justify-content: center;
 }
 
 @media (max-width: 768px) {
@@ -1908,10 +1908,12 @@
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-    gap: 25px;
-    margin-bottom: 40px;
+    .category-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+        gap: 25px;
+        margin-bottom: 40px;
+    }
 }
 
 .category-card-large {
@@ -2126,8 +2128,6 @@
         align-items: flex-start;
         gap: 15px;
     }
-    
-}
     
     .chart-app-info {
         gap: 15px;

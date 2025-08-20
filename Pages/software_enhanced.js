@@ -296,9 +296,6 @@ function filterSoftwareByCategory(category) {
             allTab.classList.add('active');
         }
     }
-}
-        if (allTab) allTab.classList.add('active');
-    }
     
     // Filter software items
     const softwareItems = document.querySelectorAll('.software-grid-item');
@@ -396,7 +393,9 @@ style.textContent = `
         }
     }
 `;
-document.head.appendChild(style); - Premium Functionality
+document.head.appendChild(style);
+
+// Premium Functionality
 
 document.addEventListener('DOMContentLoaded', function() {
     initializeEnhancedFeatures();
