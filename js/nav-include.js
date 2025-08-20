@@ -57,7 +57,32 @@ function loadNavInclude() {
                                 });
                             } else {
                                 // For other pages, use relative path
-                                link.href = pageName;
+                                // Ensure proper navigation for all page types
+                                switch(pageName) {
+                                    case 'software.html':
+                                        link.href = 'software.html';
+                                        break;
+                                    case 'templates.html':
+                                        link.href = 'templates.html';
+                                        break;
+                                    case 'book-filter.html':
+                                        link.href = 'book-filter.html';
+                                        break;
+                                    case 'contact.html':
+                                        link.href = 'contact.html';
+                                        break;
+                                    case 'login.html':
+                                        link.href = 'login.html';
+                                        break;
+                                    case 'registration.html':
+                                        link.href = 'registration.html';
+                                        break;
+                                    case 'cart-item.html':
+                                        link.href = 'cart-item.html';
+                                        break;
+                                    default:
+                                        link.href = pageName;
+                                }
                             }
                         }
                     });
