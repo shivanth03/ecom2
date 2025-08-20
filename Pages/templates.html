@@ -38,14 +38,30 @@
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
     
-    <!-- Prevent live reload issues -->
+    <!-- Live Reload Support -->
+    <meta name="livereload-port" content="35729">
+    <meta name="livereload-host" content="localhost">
+    
+    <!-- Enhanced Live Reload Support -->
     <script>
-        // Ensure DOM structure is ready for live reload
-        if (typeof window !== 'undefined') {
-            window.addEventListener('DOMContentLoaded', function() {
-                // DOM is ready
-            });
-        }
+        // Enhanced Live Reload compatibility
+        (function() {
+            if (typeof document !== 'undefined' && document.head) {
+                // Ensure proper document structure for Live Reload
+                var lrMeta = document.createElement('meta');
+                lrMeta.name = 'livereload-enabled';
+                lrMeta.content = 'true';
+                document.head.appendChild(lrMeta);
+                
+                // Add viewport meta if missing
+                if (!document.querySelector('meta[name="viewport"]')) {
+                    var vpMeta = document.createElement('meta');
+                    vpMeta.name = 'viewport';
+                    vpMeta.content = 'width=device-width, initial-scale=1.0';
+                    document.head.appendChild(vpMeta);
+                }
+            }
+        })();
     </script>
 </head>
 <body class="page-container">
@@ -68,7 +84,7 @@
             <button>View Featured</button>
           </div>
         </div>
-        <div class="img">
+        <div class="img hero-image-animated">
           <img
             src="../images/teenager-student-girl-yellow-pointing-finger-side-copy.png"
             alt="Templates Collection"
@@ -81,7 +97,16 @@
         <i class="fa-solid fa-square"></i>
         <i class="fa-solid fa-square"></i>
         <i class="fa-solid fa-square"></i>
+        <i class="fa-solid fa-square"></i>
+        <i class="fa-solid fa-square"></i>
+        <i class="fa-solid fa-square"></i>
+        <i class="fa-solid fa-square"></i>
+        <i class="fa-solid fa-square"></i>
+        <i class="fa-solid fa-square"></i>
+        <i class="fa-solid fa-square"></i>
       </div>
+      <div class="orange-circle"></div>
+      <div class="blue-circle"></div>
     </section>
 
     <!-- Featured Templates Showcase -->
@@ -643,48 +668,49 @@
                 <span class="modal-close">&times;</span>
             </div>
             <div class="modal-body">
-                <div class="modal-left">
+                <div class="modal-content-wrapper">
                     <div class="template-preview-image">
                         <img id="modalImage" src="" alt="Template Preview">
                     </div>
-                </div>
-                <div class="modal-right">
-                    <div class="template-details">
-                        <h3 id="modalTemplateTitle">Template Name</h3>
-                        <p id="modalDescription">Template description goes here...</p>
-                        
-                        <div class="template-features-modal">
-                            <h4>Features:</h4>
-                            <div id="modalFeatures" class="features-list">
-                                <!-- Features will be populated by JavaScript -->
+                    
+                    <div class="modal-right">
+                        <div class="template-details">
+                            <h3 id="modalTemplateTitle">Template Name</h3>
+                            <p id="modalDescription">Template description goes here...</p>
+                            
+                            <div class="template-features-modal">
+                                <h4>Features:</h4>
+                                <div id="modalFeatures" class="features-list">
+                                    <!-- Features will be populated by JavaScript -->
+                                </div>
                             </div>
-                        </div>
-                        
-                        <div class="template-rating-modal">
-                            <div class="rating-stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
+                            
+                            <div class="template-rating-modal">
+                                <div class="rating-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span id="modalRating">4.8 (124 reviews)</span>
                             </div>
-                            <span id="modalRating">4.8 (124 reviews)</span>
-                        </div>
-                        
-                        <div class="template-price-modal">
-                            <span class="current-price" id="modalCurrentPrice">₹3,799</span>
-                            <span class="old-price" id="modalOldPrice">₹5,999</span>
-                        </div>
-                        
-                        <div class="modal-buttons">
-                            <button class="live-preview-btn" id="livePreviewBtn">
-                                <i class="fas fa-external-link-alt"></i>
-                                Live Preview
-                            </button>
-                            <button class="add-to-cart-btn" id="addToCartBtn">
-                                <i class="fas fa-shopping-cart"></i>
-                                Add to Cart
-                            </button>
+                            
+                            <div class="template-price-modal">
+                                <span class="current-price" id="modalCurrentPrice">₹3,799</span>
+                                <span class="old-price" id="modalOldPrice">₹5,999</span>
+                            </div>
+                            
+                            <div class="modal-buttons">
+                                <button class="live-preview-btn" id="livePreviewBtn">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    Live Preview
+                                </button>
+                                <button class="add-to-cart-btn" id="addToCartBtn">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    Add to Cart
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -736,5 +762,9 @@
             window.scrollTo(0, 0);
         });
     </script>
+
+    <!-- Live Reload Ready Marker -->
+    <!-- This empty comment ensures Live Reload can inject scripts properly -->
+    
 </body>
 </html>

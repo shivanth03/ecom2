@@ -33,11 +33,32 @@ function loadNavInclude() {
                         }
                     });
                     
-                    // Update links to root pages
+                    // Update links to root pages and handle current page navigation
                     const links = header.querySelectorAll('a');
                     links.forEach(link => {
                         if (link.href.includes('index.html') && !link.href.includes('../')) {
                             link.href = '../index.html';
+                        }
+                        
+                        // Handle navigation links when already in Pages directory
+                        if (link.href.includes('Pages/')) {
+                            // If we're already in Pages directory, remove the Pages/ prefix
+                            const pageName = link.href.split('Pages/')[1];
+                            
+                            // Check if this is the current page
+                            if (window.location.pathname.includes(pageName)) {
+                                // For current page, prevent navigation and stay on same page
+                                link.href = '#';
+                                link.addEventListener('click', function(e) {
+                                    e.preventDefault();
+                                    // Optionally scroll to top or refresh page
+                                    window.scrollTo(0, 0);
+                                    return false;
+                                });
+                            } else {
+                                // For other pages, use relative path
+                                link.href = pageName;
+                            }
                         }
                     });
                 }

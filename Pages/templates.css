@@ -1,5 +1,46 @@
 /* Templates Page Specific Styles - Matching Website Theme */
 
+/* Hero Image Animation */
+@keyframes floatAnimation {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-10px) rotate(1deg);
+    }
+    50% {
+        transform: translateY(-15px) rotate(0deg);
+    }
+    75% {
+        transform: translateY(-5px) rotate(-1deg);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Hero Image Animated Class */
+.hero-image-animated {
+    animation: fadeInRight 1s ease-out 0.5s both;
+}
+
+.hero-image-animated img {
+    animation: floatAnimation 6s ease-in-out infinite;
+    transition: transform 0.3s ease;
+}
+
+.hero-image-animated img:hover {
+    transform: scale(1.05);
+}
+
 /* General Container - Full width for header/footer, constrained for content */
 body {
     margin: 0;
@@ -576,122 +617,158 @@ footer,
 }
 
 .modal-body {
-    display: flex;
+    display: block;
     padding: 0;
     max-height: calc(90vh - 100px);
-    overflow: hidden;
+    overflow-y: auto;
 }
 
-.modal-left {
-    flex: 1;
-    padding: 30px;
-    background: #f8fafc;
+.modal-content-wrapper {
+    padding: 40px;
+    text-align: center;
 }
 
 .template-preview-image {
     position: relative;
-    border-radius: 15px;
+    border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .template-preview-image img {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 15px;
+    border-radius: 20px;
+    min-height: 400px;
+    object-fit: cover;
+}
+
+.modal-left {
+    display: none;
 }
 
 .modal-right {
-    flex: 1;
-    padding: 30px;
-    overflow-y: auto;
+    width: 100%;
+    padding: 0;
+    overflow: visible;
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .template-details h3 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: #1a202c;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     font-weight: 700;
+    text-align: center;
 }
 
 .template-details p {
     color: #4a5568;
-    line-height: 1.6;
-    margin-bottom: 25px;
-    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    text-align: center;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.template-features-modal {
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 .template-features-modal h4 {
     color: #2d3748;
-    margin-bottom: 15px;
-    font-size: 1.1rem;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
     font-weight: 600;
 }
 
 .features-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 25px;
+    gap: 12px;
+    margin-bottom: 30px;
+    justify-content: center;
 }
 
 .features-list .feature-tag {
-    background: linear-gradient(135deg, #e2e8f0, #cbd5e0);
-    color: #2d3748;
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 0.85rem;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 0.9rem;
     font-weight: 500;
+    box-shadow: 0 4px 10px rgba(102, 126, 234, 0.3);
+    transition: all 0.3s ease;
+}
+
+.features-list .feature-tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(102, 126, 234, 0.4);
 }
 
 .template-rating-modal {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 10px;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
 
 .rating-stars {
     color: #fbbf24;
+    font-size: 1.2rem;
 }
 
 .template-rating-modal span {
     color: #6b7280;
     font-weight: 500;
+    font-size: 1rem;
 }
 
 .template-price-modal {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    text-align: center;
 }
 
 .current-price {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 700;
     color: #059669;
     margin-right: 15px;
 }
 
 .old-price {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: #9ca3af;
     text-decoration: line-through;
 }
 
 .modal-buttons {
     display: flex;
-    gap: 15px;
+    gap: 20px;
+    justify-content: center;
     flex-wrap: wrap;
+    margin-top: 20px;
 }
 
 .live-preview-btn,
 .add-to-cart-btn {
-    flex: 1;
-    min-width: 150px;
-    padding: 15px 25px;
+    flex: none;
+    min-width: 200px;
+    padding: 18px 30px;
     border: none;
-    border-radius: 10px;
-    font-size: 1rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -699,26 +776,30 @@ footer,
     align-items: center;
     justify-content: center;
     gap: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .live-preview-btn {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
 }
 
 .live-preview-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
 }
 
 .add-to-cart-btn {
     background: linear-gradient(135deg, #10b981 0%, #059669 100%);
     color: white;
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.3);
 }
 
 .add-to-cart-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
 }
 
 /* Responsive Modal */
@@ -729,32 +810,35 @@ footer,
         max-height: 90vh;
     }
     
-    .modal-body {
-        flex-direction: column;
-    }
-    
-    .modal-left,
-    .modal-right {
-        flex: none;
+    .modal-content-wrapper {
         padding: 20px;
     }
     
+    .template-preview-image {
+        margin-bottom: 20px;
+    }
+    
+    .template-preview-image img {
+        min-height: 250px;
+    }
+    
     .template-details h3 {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
     }
     
     .current-price {
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
     
     .modal-buttons {
         flex-direction: column;
+        gap: 15px;
     }
     
     .live-preview-btn,
     .add-to-cart-btn {
-        flex: none;
         min-width: auto;
+        width: 100%;
     }
 }
 
@@ -2332,4 +2416,3 @@ footer {
     .feature-card h3 {
         font-size: 1.1rem;
     }
-}

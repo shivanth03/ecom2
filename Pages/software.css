@@ -1,0 +1,1099 @@
+/* Software Page Specific Styles - Modern E-commerce Design */
+
+/* Hero Image Animation */
+@keyframes floatAnimation {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-10px) rotate(1deg);
+    }
+    50% {
+        transform: translateY(-15px) rotate(0deg);
+    }
+    75% {
+        transform: translateY(-5px) rotate(-1deg);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hero Image Animated Class */
+.hero-image-animated {
+    animation: fadeInRight 1s ease-out 0.5s both;
+}
+
+.hero-image-animated img {
+    animation: floatAnimation 6s ease-in-out infinite;
+    transition: transform 0.3s ease;
+}
+
+.hero-image-animated img:hover {
+    transform: scale(1.05);
+}
+
+/* General Container Styles */
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+.software-hero,
+.software-categories,
+.featured-software,
+.software-filters,
+.software-section,
+.software-comparison,
+.software-features {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* Software Hero Section */
+.software-hero {
+    background: linear-gradient(135deg, #f2f0fe 0%, #faf8ff 100%);
+    padding: 60px 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.software-hero .primary-btn {
+    background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-right: 15px;
+}
+
+.software-hero .primary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.3);
+}
+
+.software-hero .secondary-btn {
+    background: transparent;
+    color: #7c3aed;
+    border: 2px solid #7c3aed;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.software-hero .secondary-btn:hover {
+    background: #7c3aed;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Software Categories Section */
+.software-categories {
+    padding: 60px 40px;
+    background: #ffffff;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-header h2 {
+    font-size: 2.2rem;
+    color: #131428;
+    margin-bottom: 12px;
+}
+
+.section-header p {
+    font-size: 1rem;
+    color: #6b7280;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.category-card {
+    background: white;
+    padding: 25px 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.06);
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid #f1f5f9;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(124, 58, 237, 0.12);
+    border-color: #7c3aed;
+}
+
+.category-icon {
+    background: linear-gradient(135deg, #7c3aed, #a855f7);
+    width: 55px;
+    height: 55px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.category-card h4 {
+    font-size: 1.2rem;
+    color: #131428;
+    margin-bottom: 8px;
+}
+
+.category-card p {
+    color: #6b7280;
+    margin-bottom: 15px;
+    line-height: 1.5;
+    font-size: 0.9rem;
+}
+
+.category-count {
+    background: #f2f0fe;
+    color: #7c3aed;
+    padding: 6px 14px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* Featured Software Section */
+.featured-software {
+    padding: 60px 40px;
+    background: #f8fafc;
+}
+
+.featured-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.featured-software-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.featured-software-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(124, 58, 237, 0.12);
+}
+
+.software-image {
+    position: relative;
+    overflow: hidden;
+    height: 180px;
+}
+
+.software-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.featured-software-card:hover .software-image img {
+    transform: scale(1.05);
+}
+
+.software-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(124, 58, 237, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.featured-software-card:hover .software-overlay {
+    opacity: 1;
+}
+
+.software-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.trial-btn, .demo-btn {
+    background: white;
+    color: #7c3aed;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.85rem;
+}
+
+.trial-btn:hover, .demo-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.3);
+}
+
+.software-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.software-badge.premium {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: white;
+}
+
+.software-badge.new {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+}
+
+.software-badge.popular {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+}
+
+.software-price {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.software-info {
+    padding: 20px;
+}
+
+.software-info h4 {
+    font-size: 1.2rem;
+    color: #131428;
+    margin-bottom: 6px;
+}
+
+.software-category {
+    color: #7c3aed;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.software-description {
+    color: #6b7280;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    display: -webkit-box;
+    display: box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    box-orient: vertical;
+    overflow: hidden;
+    height: 63px;
+
+.software-rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.stars {
+    color: #f59e0b;
+    font-size: 0.85rem;
+}
+
+.software-rating span {
+    color: #6b7280;
+    font-size: 0.85rem;
+}
+
+.software-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 15px;
+}
+
+.feature-tag {
+    background: #f2f0fe;
+    color: #7c3aed;
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+
+.system-requirements {
+    display: flex;
+    gap: 8px;
+    font-size: 1rem;
+    color: #6b7280;
+}
+
+/* Software Filters Section */
+.software-filters {
+    padding: 40px 40px 30px;
+    background: white;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.filter-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.filter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.filter-header h3 {
+    font-size: 1.7rem;
+    color: #131428;
+}
+
+.filter-controls {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.category-filters {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: transparent;
+    border: 2px solid #e5e7eb;
+    color: #6b7280;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background: #7c3aed;
+    border-color: #7c3aed;
+    color: white;
+}
+
+.sort-controls {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+#sort-software {
+    padding: 8px 12px;
+    border: 2px solid #e5e7eb;
+    border-radius: 6px;
+    background: white;
+    color: #131428;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.view-toggle {
+    display: flex;
+    background: #f1f5f9;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.view-btn {
+    background: transparent;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    color: #6b7280;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.view-btn.active, .view-btn:hover {
+    background: #7c3aed;
+    color: white;
+}
+
+/* Software Grid Section */
+.software-section {
+    padding: 40px 40px;
+    background: #f8fafc;
+}
+
+.software-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.software-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    border: 1px solid #f1f5f9;
+}
+
+.software-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(124, 58, 237, 0.12);
+    border-color: #7c3aed;
+}
+
+.software-card .software-image {
+    height: 150px;
+    position: relative;
+    overflow: hidden;
+}
+
+.software-card .software-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.preview-btn, .software-card .trial-btn {
+    background: rgba(255, 255, 255, 0.9);
+    color: #7c3aed;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.preview-btn:hover, .software-card .trial-btn:hover {
+    background: white;
+    transform: translateY(-1px);
+}
+
+.software-card .software-info {
+    padding: 18px;
+}
+
+.category-tag {
+    color: #7c3aed;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.software-card .software-info h4 {
+    font-size: 1.1rem;
+    color: #131428;
+    margin-bottom: 6px;
+    line-height: 1.3;
+}
+
+.software-card .software-description {
+    color: #6b7280;
+    line-height: 1.4;
+    margin-bottom: 12px;
+    font-size: 0.85rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.software-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-bottom: 15px;
+}
+
+.feature-tag {
+    background: #f2f0fe;
+    color: #7c3aed;
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+
+.software-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #f1f5f9;
+}
+
+.software-rating {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.software-rating i {
+    color: #f59e0b;
+    font-size: 0.8rem;
+}
+
+.software-rating span {
+    color: #6b7280;
+    font-size: 0.8rem;
+}
+
+.price-current {
+    color: #131428;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.price-old {
+    color: #9ca3af;
+    text-decoration: line-through;
+    font-size: 0.85rem;
+    margin-left: 6px;
+}
+
+.system-compatibility {
+    display: flex;
+    gap: 6px;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+.system-compatibility i {
+    color: #6b7280;
+    transition: color 0.3s ease;
+}
+
+.system-compatibility i:hover {
+    color: #7c3aed;
+}
+
+/* Load More Button */
+.load-more-container {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.load-more-btn {
+    background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.load-more-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(124, 58, 237, 0.3);
+}
+
+.loading-spinner {
+    color: #7c3aed;
+    font-size: 1rem;
+    margin-top: 20px;
+}
+
+/* Software Comparison Section */
+.software-comparison {
+    padding: 60px 40px;
+    background: white;
+}
+
+.comparison-table {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+    margin-top: 30px;
+}
+
+.comparison-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    background: linear-gradient(135deg, #7c3aed, #a855f7);
+    color: white;
+}
+
+.feature-column {
+    padding: 20px;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.software-column {
+    padding: 20px;
+    text-align: center;
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.software-column img {
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+}
+
+.software-column h4 {
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+}
+
+.software-column p {
+    font-size: 0.8rem;
+    opacity: 0.9;
+}
+
+.comparison-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.comparison-row:last-child {
+    border-bottom: none;
+}
+
+.feature-name {
+    padding: 15px 20px;
+    font-weight: 600;
+    color: #131428;
+    background: #f8fafc;
+    font-size: 0.9rem;
+}
+
+.feature-value {
+    padding: 15px 20px;
+    text-align: center;
+    border-left: 1px solid #f1f5f9;
+    font-size: 0.9rem;
+}
+
+.text-green {
+    color: #10b981;
+}
+
+.text-red {
+    color: #ef4444;
+}
+
+/* Software Features Section */
+.software-features {
+    padding: 60px 40px;
+    background: #f8fafc;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.feature-item {
+    background: white;
+    padding: 25px 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.06);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(124, 58, 237, 0.12);
+}
+
+.feature-icon {
+    background: linear-gradient(135deg, #7c3aed, #a855f7);
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.feature-item h4 {
+    font-size: 1.1rem;
+    color: #131428;
+    margin-bottom: 12px;
+}
+
+.feature-item p {
+    color: #6b7280;
+    line-height: 1.5;
+    font-size: 0.9rem;
+}
+
+/* Software Modal */
+.software-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 10000;
+    backdrop-filter: blur(5px);
+}
+
+.software-modal .modal-content {
+    background: white;
+    margin: 2% auto;
+    padding: 0;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 1000px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    animation: slideInUp 0.3s ease-out;
+}
+
+.modal-header {
+    background: linear-gradient(135deg, #7c3aed, #a855f7);
+    color: white;
+    padding: 25px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.modal-close {
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.modal-close:hover {
+    opacity: 1;
+}
+
+.modal-body {
+    padding: 40px;
+}
+
+.modal-content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.software-preview-image img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.modal-category {
+    color: #7c3aed;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.software-features-modal h4,
+.system-requirements-modal h4 {
+    color: #131428;
+    font-size: 1.1rem;
+    margin: 25px 0 15px 0;
+}
+
+.features-list,
+.system-req-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.features-list .feature-tag {
+    background: #f2f0fe;
+    color: #7c3aed;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    width: fit-content;
+}
+
+.software-rating-modal {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 25px 0;
+}
+
+.software-price-modal {
+    margin: 25px 0;
+}
+
+.current-price {
+    color: #131428;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.old-price {
+    color: #9ca3af;
+    text-decoration: line-through;
+    font-size: 1.2rem;
+    margin-left: 15px;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.trial-btn-modal,
+.buy-btn-modal {
+    flex: 1;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.trial-btn-modal {
+    background: #f1f5f9;
+    color: #7c3aed;
+    border: 2px solid #7c3aed;
+}
+
+.trial-btn-modal:hover {
+    background: #7c3aed;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.buy-btn-modal {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+}
+
+.buy-btn-modal:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .modal-content-wrapper {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .featured-grid {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+    
+    .comparison-header,
+    .comparison-row {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+    }
+    
+    .feature-column {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .software-hero,
+    .software-categories,
+    .featured-software,
+    .software-filters,
+    .software-section,
+    .software-comparison,
+    .software-features {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    .software-hero {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    
+    .filter-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+    }
+    
+    .filter-controls {
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .category-filters {
+        justify-content: center;
+    }
+    
+    .software-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .categories-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .featured-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-body {
+        padding: 20px;
+    }
+    
+    .section-header h2 {
+        font-size: 2rem;
+    }
+    
+    .filter-header h3 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .software-hero .btns {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .software-hero .primary-btn,
+    .software-hero .secondary-btn {
+        width: 100%;
+        text-align: center;
+        margin-right: 0;
+    }
+    
+    .modal-buttons {
+        flex-direction: column;
+    }
+    
+    .comparison-header,
+    .comparison-row {
+        grid-template-columns: 1fr;
+        text-align: left;
+    }
+    
+    .software-column,
+    .feature-value {
+        border-left: none;
+        border-top: 1px solid #f1f5f9;
+    }
