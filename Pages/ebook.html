@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ecomshop - Ebooks Collection</title>
+    <meta name="description" content="Browse our curated collection of ebooks for every interest and need. Find bestsellers, new releases, and exclusive digital content." />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="ebook.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+    <div id="nav-placeholder"></div>
+    <div class="ebook-body-padding">
+    <section class="hero">
+      <div class="main">
+        <div class="content">
+          <small>ebooks collection</small>
+          <h2>Discover Top Ebooks</h2>
+          <h5>Read, Learn, Grow</h5>
+          <p>
+            Explore our handpicked selection of ebooks for every genre and interest. Enjoy instant access and exclusive deals!
+          </p>
+          <div class="btns">
+            <button>Browse Ebooks <i class="fa-solid fa-arrow-right"></i></button>
+            <button>See Categories</button>
+          </div>
+        </div>
+        <div class="img">
+          <img src="../images/teenager-student-girl-yellow-pointing-finger-side-copy.png" alt="Ebooks Banner" />
+        </div>
+      </div>
+      <div class="square-dot">
+        <i class="fa-solid fa-square"></i>
+        <i class="fa-solid fa-square"></i>
+        <i class="fa-solid fa-square"></i>
+        <i class="fa-solid fa-square"></i>
+        <i class="fa-solid fa-square"></i>
+        <i class="fa-solid fa-square"></i>
+        <i class="fa-solid fa-square"></i>
+        <i class="fa-solid fa-square"></i>
+        <i class="fa-solid fa-square"></i>
+        <i class="fa-solid fa-square"></i>
+        <i class="fa-solid fa-square"></i>
+        <i class="fa-solid fa-square"></i>
+      </div>
+      <div class="orange-circle"></div>
+      <div class="blue-circle"></div>
+    <!-- Add empty space below hero for visual separation -->
+    <div style="height: 40px;"></div>
+    </section>
+    <section class="ebook-categories">
+      <div class="container">
+  <!-- Removed categories section header and description -->
+        <!-- No books shown in categories section -->
+      </div>
+    </section>
+    <!-- Books grid and load more button directly below categories -->
+    <div class="section-header" style="text-align:center; margin-top:32px;">
+      <h2>Featured Ebooks</h2>
+      <p>Browse our top picks and bestsellers</p>
+    </div>
+    <div class="book-container">
+      <div class="book">
+        <figure>
+          <a href="book-detail.html"><img src="../images/book-1.jpg" alt="The Ruins Of Gorlan" /></a>
+        </figure>
+        <h4>The Ruins Of Gorlan</h4>
+        <div class="genre">THRILLER</div>
+        <div class="price-row">
+          <span class="price">₹54.6</span>
+          <span class="old-price">₹70.00</span>
+        </div>
+      </div>
+      <div class="book">
+        <figure>
+          <a href="book-detail.html"><img src="../images/book-2.jpg" alt="Percy Jackson" /></a>
+        </figure>
+        <h4>Percy Jackson</h4>
+        <div class="genre">THRILLER</div>
+        <div class="price-row">
+          <span class="price">₹54.6</span>
+          <span class="old-price">₹70.00</span>
+        </div>
+      </div>
+      <div class="book">
+        <figure>
+          <a href="book-detail.html"><img src="../images/book-3.jpg" alt="Clever Lands" /></a>
+        </figure>
+        <h4>Clever Lands</h4>
+        <div class="genre">THRILLER</div>
+        <div class="price-row">
+          <span class="price">₹54.6</span>
+          <span class="old-price">₹70.00</span>
+        </div>
+      </div>
+      <div class="book">
+        <figure>
+          <a href="book-detail.html"><img src="../images/book-4.jpg" alt="Dick Francis" /></a>
+        </figure>
+        <h4>Dick Francis</h4>
+        <div class="genre">THRILLER</div>
+        <div class="price-row">
+          <span class="price">₹54.6</span>
+          <span class="old-price">₹70.00</span>
+        </div>
+      </div>
+      <div class="book">
+        <figure>
+          <a href="book-detail.html"><img src="../images/book-5.jpg" alt="The Giver" /></a>
+        </figure>
+        <h4>The Giver</h4>
+        <div class="genre">THRILLER</div>
+        <div class="price-row">
+          <span class="price">₹54.6</span>
+          <span class="old-price">₹70.00</span>
+        </div>
+      </div>
+    </div>
+  <!-- Removed Load More Books button -->
+    </div>
+  <!-- Add extra space between Featured Books and Browse by Category -->
+  <div style="height: 40px;"></div>
+  <br />
+  <br />
+  <!-- Browse by Category section inserted between Featured Books and Footer -->
+    <div class="section-header" style="text-align:center; margin-top:48px;">
+      <h2>Browse by Category</h2>
+      <p>Find books by your favorite genre</p>
+    </div>
+    <div class="category-filter-row" style="text-align:center; margin-bottom:18px;">
+      <label for="category-filter">Filter by:</label>
+      <select id="category-filter">
+        <option value="all">All</option>
+        <option value="thriller">Thriller</option>
+        <option value="fantasy">Fantasy</option>
+        <option value="nonfiction">Non-Fiction</option>
+        <option value="education">Education</option>
+      </select>
+    </div>
+    <div class="book-container" id="category-books-grid"></div>
+    <div class="load-more-books" style="text-align:center; margin-top:18px;">
+      <button id="load-more-category-books-btn" class="btn-primary">Load More Books</button>
+    </div>
+    <div id="footer-placeholder"></div>
+    <script src="ebook.js"></script>
+    <script src="../js/nav-include.js"></script>
+</body>
+</html>

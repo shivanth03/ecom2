@@ -45,44 +45,35 @@ function loadNavInclude() {
                             // If we're already in Pages directory, remove the Pages/ prefix
                             const pageName = link.href.split('Pages/')[1];
                             
-                            // Check if this is the current page
-                            if (window.location.pathname.includes(pageName)) {
-                                // For current page, prevent navigation and stay on same page
-                                link.href = '#';
-                                link.addEventListener('click', function(e) {
-                                    e.preventDefault();
-                                    // Optionally scroll to top or refresh page
-                                    window.scrollTo(0, 0);
-                                    return false;
-                                });
-                            } else {
-                                // For other pages, use relative path
-                                // Ensure proper navigation for all page types
-                                switch(pageName) {
-                                    case 'software.html':
-                                        link.href = 'software.html';
-                                        break;
-                                    case 'templates.html':
-                                        link.href = 'templates.html';
-                                        break;
-                                    case 'book-filter.html':
-                                        link.href = 'book-filter.html';
-                                        break;
-                                    case 'contact.html':
-                                        link.href = 'contact.html';
-                                        break;
-                                    case 'login.html':
-                                        link.href = 'login.html';
-                                        break;
-                                    case 'registration.html':
-                                        link.href = 'registration.html';
-                                        break;
-                                    case 'cart-item.html':
-                                        link.href = 'cart-item.html';
-                                        break;
-                                    default:
-                                        link.href = pageName;
-                                }
+                            // Always set the relative path for navigation
+                            // Remove the complex current page detection that was causing issues
+                            switch(pageName) {
+                                case 'software.html':
+                                    link.href = 'software.html';
+                                    break;
+                                case 'templates.html':
+                                    link.href = 'templates.html';
+                                    break;
+                                case 'bundle.html':
+                                    link.href = 'bundle.html';
+                                    break;
+                                case 'ebook.html':
+                                    link.href = 'ebook.html';
+                                    break;
+                                case 'contact.html':
+                                    link.href = 'contact.html';
+                                    break;
+                                case 'login.html':
+                                    link.href = 'login.html';
+                                    break;
+                                case 'registration.html':
+                                    link.href = 'registration.html';
+                                    break;
+                                case 'cart-item.html':
+                                    link.href = 'cart-item.html';
+                                    break;
+                                default:
+                                    link.href = pageName;
                             }
                         }
                     });

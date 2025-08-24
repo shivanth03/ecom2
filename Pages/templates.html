@@ -728,6 +728,61 @@
     <script src="../js/load-more-templates.js"></script>
     <script src="templates_modal.js"></script>
     
+    <!-- Fix for Software Navigation -->
+    <script>
+        // Comprehensive fix to ensure software navigation works correctly from templates page
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            function fixSoftwareNavigation() {
+                // Find software link by ID first
+                const softwareLinkById = document.getElementById('software-nav-link');
+                if (softwareLinkById) {
+                    console.log('Found software link by ID, fixing...');
+                    softwareLinkById.href = 'software.html';
+                    softwareLinkById.onclick = function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        console.log('Navigating to software.html via ID click');
+                        window.location.href = 'software.html';
+                        return false;
+                    };
+                }
+                
+                // Find all software links by text content and href as backup
+                const allLinks = document.querySelectorAll('a');
+                const softwareLinks = Array.from(allLinks).filter(link => 
+                    link.textContent.trim().toLowerCase().includes('software') || 
+                    link.href.includes('software')
+                );
+                
+                console.log('Found software links:', softwareLinks.length);
+                
+                softwareLinks.forEach((link, index) => {
+                    console.log(`Fixing software link ${index + 1}:`, link.href, link.textContent);
+                    
+                    // Force correct href
+                    link.href = 'software.html';
+                    
+                    // Override click behavior
+                    link.onclick = function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        console.log('Software link clicked via backup, navigating to software.html');
+                        window.location.href = 'software.html';
+                        return false;
+                    };
+                });
+            }
+            
+            // Run multiple times to catch dynamic loading
+            fixSoftwareNavigation();
+            setTimeout(fixSoftwareNavigation, 100);
+            setTimeout(fixSoftwareNavigation, 500);
+            setTimeout(fixSoftwareNavigation, 1000);
+            setTimeout(fixSoftwareNavigation, 2000);
+        });
+    </script>
+    
     <!-- Live Reload Compatibility Script -->
     <script>
         // Ensure proper document structure for Live Reload
