@@ -300,10 +300,6 @@
   font-size: 1.15rem;
   margin-right: 4px;
 }
-  font-weight: 600;
-  font-size: 1.05rem;
-  letter-spacing: 0.01em;
-}
 .books-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -351,7 +347,6 @@
   display: inline-block;
   padding: 4px 18px;
   box-shadow: 0 2px 8px rgba(255,126,95,0.09);
-}
 }
 
 /* Attractive View Details Button for Book Cards */
@@ -412,8 +407,7 @@
   background: linear-gradient(90deg, #3b82f6 0%, #1e40af 100%);
   box-shadow: 0 2px 8px rgba(59,130,246,0.13);
   transform: scale(0.98);
-}
-}
+
 
 /* Book Details Modal Styles */
 .book-details-modal {
@@ -468,3 +462,6 @@
 .book-details-close:hover {
   background: #ddd;
 }
+
+
+

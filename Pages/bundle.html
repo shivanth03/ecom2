@@ -61,8 +61,8 @@
                 </div>
                 <div class="img">
                     <img
-                        src="../images/book-loader.gif"
-                        alt="Bundles Preview"
+                        src="../images/teenager-student-girl-yellow-pointing-finger-side-copy.png"
+                        alt="Bundles Banner"
                     />
                 </div>
             </div>
@@ -729,7 +729,22 @@
     </div>
 
     <!-- Scripts -->
-    <script src="../js/nav-include.js"></script>
+        <script src="../js/nav-include.js"></script>
+        <script>
+            // Ensure nav links work after nav is loaded
+            document.addEventListener('DOMContentLoaded', function() {
+                setTimeout(function() {
+                    document.querySelectorAll('.nav-list a').forEach(function(link) {
+                        link.onclick = function(e) {
+                            if (link.href && link.getAttribute('href')) {
+                                window.location.href = link.getAttribute('href');
+                                e.preventDefault();
+                            }
+                        };
+                    });
+                }, 300);
+            });
+        </script>
     <script src="../js/script.js"></script>
     <script src="bundle.js"></script>
     <script src="../js/back-to-top.js"></script>

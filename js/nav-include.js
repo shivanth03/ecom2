@@ -1,165 +1,57 @@
-// Function to load nav include (header + footer from nav.html)
+// Robust header include and link rewriting for navigation
 document.addEventListener('DOMContentLoaded', function() {
-    loadNavInclude();
-});
-
-// Function to load the full navigation structure
-function loadNavInclude() {
-    // Determine the correct path based on current location
+    // Determine correct nav.html path
     const navPath = window.location.pathname.includes('/Pages/') ? '../includes/nav.html' : 'includes/nav.html';
-    
     fetch(navPath)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.text();
-        })
+        .then(response => response.text())
         .then(data => {
-            // Split nav.html into header and footer parts
             const parser = new DOMParser();
             const doc = parser.parseFromString(data, 'text/html');
-            
-            // Get header - try both nav-placeholder and header-placeholder
             const header = doc.querySelector('header');
             if (header) {
-                // Fix paths for Pages subdirectory
+                // Fix image paths for /Pages/
                 if (window.location.pathname.includes('/Pages/')) {
-                    // Update image sources
-                    const images = header.querySelectorAll('img');
-                    images.forEach(img => {
+                    header.querySelectorAll('img').forEach(img => {
                         if (img.src.includes('images/')) {
                             img.src = img.src.replace('images/', '../images/');
                         }
                     });
-                    
-                    // Update links to root pages and handle current page navigation
-                    const links = header.querySelectorAll('a');
-                    links.forEach(link => {
-                        if (link.href.includes('index.html') && !link.href.includes('../')) {
-                            link.href = '../index.html';
+                    // Rewrite all header links
+                    header.querySelectorAll('a').forEach(link => {
+                        let href = link.getAttribute('href');
+                        if (!href) return;
+                        // Home link
+                        if (href === 'index.html') {
+                            link.setAttribute('href', '../index.html');
                         }
-                        
-                        // Handle navigation links when already in Pages directory
-                        if (link.href.includes('Pages/')) {
-                            // If we're already in Pages directory, remove the Pages/ prefix
-                            const pageName = link.href.split('Pages/')[1];
-                            
-                            // Always set the relative path for navigation
-                            // Remove the complex current page detection that was causing issues
-                            switch(pageName) {
-                                case 'software.html':
-                                    link.href = 'software.html';
-                                    break;
-                                case 'templates.html':
-                                    link.href = 'templates.html';
-                                    break;
-                                case 'bundle.html':
-                                    link.href = 'bundle.html';
-                                    break;
-                                case 'ebook.html':
-                                    link.href = 'ebook.html';
-                                    break;
-                                case 'contact.html':
-                                    link.href = 'contact.html';
-                                    break;
-                                case 'login.html':
-                                    link.href = 'login.html';
-                                    break;
-                                case 'registration.html':
-                                    link.href = 'registration.html';
-                                    break;
-                                case 'cart-item.html':
-                                    link.href = 'cart-item.html';
-                                    break;
-                                default:
-                                    link.href = pageName;
-                            }
+                        // Pages/xxx.html links
+                        else if (href.startsWith('Pages/')) {
+                            link.setAttribute('href', href.replace('Pages/', ''));
+                        }
+                        // Already relative (xxx.html)
+                        else if (/^[a-zA-Z0-9_-]+\.html$/.test(href)) {
+                            link.setAttribute('href', href);
+                        }
+                        // Other links (external, etc.)
+                        else {
+                            link.setAttribute('href', href);
                         }
                     });
                 }
-                
+                // Inject header
                 const navPlaceholder = document.getElementById('nav-placeholder');
-                const headerPlaceholder = document.getElementById('header-placeholder');
                 if (navPlaceholder) {
                     navPlaceholder.innerHTML = header.outerHTML;
-                } else if (headerPlaceholder) {
-                    headerPlaceholder.innerHTML = header.outerHTML;
                 }
             }
-            
-            // Get footer
-            const footer = doc.querySelector('footer');
-            if (footer) {
-                // Fix paths for Pages subdirectory
-                if (window.location.pathname.includes('/Pages/')) {
-                    // Update image sources in footer
-                    const images = footer.querySelectorAll('img');
-                    images.forEach(img => {
-                        if (img.src.includes('images/')) {
-                            img.src = img.src.replace('images/', '../images/');
-                        }
-                    });
-                    
-                    // Update links in footer
-                    const links = footer.querySelectorAll('a');
-                    links.forEach(link => {
-                        if (link.href.includes('index.html') && !link.href.includes('../')) {
-                            link.href = '../index.html';
-                        }
-                    });
-                }
-                
-                const footerPlaceholder = document.getElementById('footer-placeholder');
-                if (footerPlaceholder) {
-                    footerPlaceholder.innerHTML = footer.outerHTML;
-                }
+        });
+});
+            if (navPlaceholder) {
+                navPlaceholder.innerHTML = header.outerHTML;
+            } else if (headerPlaceholder) {
+                headerPlaceholder.innerHTML = header.outerHTML;
             }
-            
-            // Get back to top button
-            const backToTop = doc.querySelector('.back-to-top');
-            if (backToTop) {
-                document.body.appendChild(backToTop);
-            }
-            
-            // Execute any scripts that were in the nav.html
-            const scripts = doc.querySelectorAll('script');
-            scripts.forEach(script => {
-                if (script.innerHTML.trim()) {
-                    const newScript = document.createElement('script');
-                    newScript.innerHTML = script.innerHTML;
-                    document.body.appendChild(newScript);
-                }
-            });
-            
-            // Initialize mobile menu after loading
-            initializeMobileMenu();
-        })
-        .catch(error => {
-            console.error('Error loading nav:', error);
-            // Fallback: try to load header and footer separately
-            loadSeparateIncludes();
-        });
-}
-
-// Initialize mobile menu functionality
-function initializeMobileMenu() {
-    const hamburger = document.querySelector('.hamburger');
-    const navList = document.querySelector('.nav-list');
-    const closeBtn = document.querySelector('.close');
-
-    if (hamburger && navList) {
-        hamburger.addEventListener('click', function() {
-            navList.classList.add('active');
-        });
-    }
-
-    if (closeBtn && navList) {
-        closeBtn.addEventListener('click', function() {
-            navList.classList.remove('active');
-        });
-    }
-}
+// ...existing code...
 
 // Fallback function to load header and footer separately
 function loadSeparateIncludes() {
@@ -189,5 +81,6 @@ function loadSeparateIncludes() {
                 footerPlaceholder.innerHTML = data;
             }
         })
-        .catch(error => console.error('Error loading footer:', error));
+    .catch(error => console.error('Error loading footer:', error));
+
 }
