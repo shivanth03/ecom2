@@ -1,223 +1,292 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ecomshop - Online Book Store website</title>
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="book-filter.css" />
-    <!-- Fontawesome Link for Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <!--- google font link-->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="apple-touch-icon" sizes="57x57" href="../favicon/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="../favicon/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="../favicon/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="../favicon/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="../favicon/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="../favicon/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="../favicon/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="../favicon/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192"  href="../favicon/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="../favicon/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
-<link rel="manifest" href="../favicon/manifest.json">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
-  </head>
-  <body>
-    <header>
-      <nav class="navbar-2">
-        <div class="logo">
-          <div class="img">
-            <img src="../images/logo.png" alt="" />
-          </div>
-          <div class="title">
-            <h4>Ecomshop<i class="fa-solid fa-grid"></i></h4>
-            <small>Book Store Website</small>
-          </div>
-        </div>
-        <div class="search-box">
-          <div class="search-field">
-            <input
-              type="text"
-              placeholder="Search over 30 million Book titles"
-            />
-            <button class="search-icon">
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </button>
-          </div>
-        </div>
-        <div class="nav-end">
-          <button class="likebtn">
-            <i class="fa-regular fa-heart"></i> <span>35</span>
-          </button>
-          <button class="cart">
-            <a href="cart-item.html"><i class="fa-solid fa-cart-shopping"></i> <span>4</span></a>
-          </button>
-          <div class="profile-img">
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiM0o_5tIn0DAmbB2wKS4GvurHctTwxD5om2vi4NOsj1ODDSGULrviZ-QV3ul8JYEMfO0&usqp=CAU"
-              alt=""
-            />
-          </div>
-        </div>
-      </nav>
-    </header>
-    <div class="breadcrumb-container">
-      <ul class="breadcrumb">
-        <li><a href="#" style="color: #6c5dd4">Home</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </div>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Contact Us - Ecomshop</title>
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+	<style>
+		body {
+			font-family: 'Poppins', Arial, sans-serif;
+			background: #f7f8fa;
+			margin: 0;
+			color: #222;
+		}
+		.contact-section {
+			max-width: 700px;
+			margin: 48px auto 32px auto;
+			background: #fff;
+			border-radius: 16px;
+			box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+			padding: 40px 32px 32px 32px;
+		}
+		.contact-section h2 {
+			font-size: 2.2rem;
+			font-weight: 700;
+			margin-bottom: 8px;
+			color: #2a3a5e;
+		}
+		.contact-section p {
+			color: #555;
+			margin-bottom: 24px;
+		}
+		.contact-form {
+			display: flex;
+			flex-direction: column;
+			gap: 18px;
+		}
+		.contact-form label {
+			font-weight: 500;
+			margin-bottom: 6px;
+		}
+		.contact-form input,
+		.contact-form textarea {
+			padding: 12px 16px;
+			border-radius: 8px;
+			border: 1px solid #d6d6d6;
+			font-size: 1rem;
+			background: #f7f8fa;
+			color: #222;
+			resize: vertical;
+		}
+		.contact-form textarea {
+			min-height: 120px;
+		}
+		.contact-form button {
+			background: #2a3a5e;
+			color: #fff;
+			border: none;
+			border-radius: 8px;
+			padding: 12px 0;
+			font-size: 1.1rem;
+			font-weight: 600;
+			cursor: pointer;
+			transition: background 0.2s;
+		}
+		.contact-form button:hover {
+			background: #1d2840;
+		}
+		.contact-info {
+			margin-top: 32px;
+			display: flex;
+			flex-direction: column;
+			gap: 12px;
+		}
+		.contact-info .info-row {
+			display: flex;
+			align-items: center;
+			gap: 12px;
+			color: #444;
+		}
+		.contact-info .info-row i {
+			color: #2a3a5e;
+			font-size: 1.2rem;
+		}
+		/* Redesigned Contact Page Layout */
+		.redesigned-contact {
+			display: flex;
+			gap: 2.5rem;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			padding: 0 0 32px 0;
+		}
+		.contact-info-panel {
+			flex: 1 1 320px;
+			background: linear-gradient(135deg, #f7f8fa 60%, #e9e6ff 100%);
+			border-radius: 16px;
+			box-shadow: 0 2px 12px rgba(44,62,80,0.07);
+			padding: 32px 24px 24px 24px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 18px;
+		}
+		.info-logo {
+			text-align: center;
+		}
+		.info-logo h2 {
+			font-size: 1.7rem;
+			color: #6c47ff;
+			font-weight: 700;
+			margin: 10px 0 2px 0;
+		}
+		.info-logo p {
+			color: #555;
+			font-size: 1rem;
+			margin-bottom: 8px;
+		}
+		.info-details h3 {
+			font-size: 1.1rem;
+			color: #2a3a5e;
+			margin-bottom: 10px;
+			font-weight: 600;
+		}
+		.info-details ul {
+			list-style: none;
+			padding: 0;
+			margin: 0 0 10px 0;
+		}
+		.info-details ul li {
+			margin-bottom: 10px;
+			font-size: 1rem;
+			color: #444;
+			display: flex;
+			align-items: center;
+			gap: 10px;
+		}
+		.info-details ul li a {
+			color: #6c47ff;
+			text-decoration: none;
+			font-weight: 500;
+		}
+		.info-details ul li a:hover {
+			text-decoration: underline;
+		}
+		.info-map {
+			width: 100%;
+			margin-top: 8px;
+		}
+		.contact-form-panel {
+			flex: 1 1 380px;
+			background: #fff;
+			border-radius: 16px;
+			box-shadow: 0 2px 12px rgba(44,62,80,0.07);
+			padding: 32px 24px 24px 24px;
+			display: flex;
+			flex-direction: column;
+			gap: 18px;
+		}
+		.form-header {
+			text-align: left;
+			margin-bottom: 10px;
+		}
+		.form-header h2 {
+			font-size: 1.5rem;
+			color: #6c47ff;
+			font-weight: 700;
+			margin-bottom: 6px;
+		}
+		.form-header p {
+			color: #555;
+			font-size: 1rem;
+		}
+		.contact-form .input-group {
+			margin-bottom: 18px;
+		}
+		.contact-form label {
+			font-weight: 600;
+			color: #6c47ff;
+			margin-bottom: 6px;
+			display: block;
+		}
+		.contact-form input,
+		.contact-form textarea {
+			width: 100%;
+			padding: 12px 16px;
+			border-radius: 8px;
+			border: 1px solid #d6d6d6;
+			font-size: 1rem;
+			background: #f7f8fa;
+			color: #222;
+			resize: vertical;
+			margin-top: 4px;
+		}
+		.contact-form textarea {
+			min-height: 100px;
+		}
+		.contact-form button {
+			background: linear-gradient(90deg, #6c47ff 0%, #a855f7 100%);
+			color: #fff;
+			border: none;
+			border-radius: 8px;
+			padding: 12px 0;
+			font-size: 1.1rem;
+			font-weight: 700;
+			cursor: pointer;
+			transition: background 0.2s;
+			width: 100%;
+			margin-top: 8px;
+			box-shadow: 0 2px 8px rgba(44,62,80,0.07);
+		}
+		.contact-form button:hover {
+			background: linear-gradient(90deg, #a855f7 0%, #6c47ff 100%);
+		}
+		#form-success {
+			color: #6c47ff;
+			font-weight: 600;
+			margin-top: 12px;
+			text-align: center;
+		}
+		@media (max-width: 900px) {
+			.redesigned-contact {
+				flex-direction: column;
+				gap: 2rem;
+			}
+			.contact-info-panel, .contact-form-panel {
+				width: 100%;
+				margin: 0 auto;
+			}
+		}
+		@media (max-width: 600px) {
+			.contact-section {
+				padding: 18px 8px;
+			}
+			.contact-info-panel, .contact-form-panel {
+				padding: 18px 8px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div id="nav-placeholder"></div>
 
-    <section class="contact">
-      <h3>Contact Us</h3>
-      <div class="main">
-        <div class="map">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6310.594819201665!2d-122.42768319999999!3d37.73616639999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f7e60a337d5f5%3A0xfa0bb626904e5ab2!2z4KSV4KWJ4KSy4KWH4KScIOCkueCkv-Cksiwg4KS44KS-4KSoIOCkq-CljeCksOCkvuCkguCkuOCkv-CkuOCljeCkleCliywg4KSV4KWI4KSy4KWA4KSr4KWL4KSw4KWN4KSo4KS_4KSv4KS-LCDgpK_gpYLgpKjgpL7gpIfgpJ_gpYfgpKEg4KS44KWN4KSf4KWH4KSf4KWN4oCN4KS4!5e0!3m2!1shi!2sin!4v1686917463994!5m2!1shi!2sin"
-              height="70"
-              style="width: 100%; border: none; border-radius: 5px"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
-        </div>
-        <div class="contact-form">
-          <h4>Contact Us</h4>
-          <p>Get in touch with us</p>
-          <div class="input-form">
-            <div class="input-field">
-              <label for="name">Full Name *</label>
-              <input type="text" name="" id="name" placeholder="Full Name" />
-            </div>
-            <div class="input-field">
-              <label for="email">E-mail *</label>
-              <input type="email" name="" id="email" placeholder="Email Address" />
-            </div>
-            <div class="input-field">
-              <label for="phone">Phone No. *</label>
-              <input type="text" name="" id="phone" placeholder="Phone Number" />
-            </div>
-            <div class="message">
-                <label for="message">Message *</label>
-                <textarea placeholder="Message" id="message"></textarea>
-            </div>
-            <button>submit</button>
-          </div>
-        </div>
-      </div>
-    </section>
-    <footer>
-      <div class="container">
-        <div class="logo-description">
-          <div class="logo">
-            <div class="img">
-              <img src="../images/logo.png" alt="" />
-            </div>
-            <div class="title">
-              <h4>Ecomshop</h4>
-              <small>Book Store Website</small>
-            </div>
-          </div>
-          <div class="logo-body">
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam
-              voluptates eius quasi reiciendis recusandae provident veritatis
-              sequi, dolores architecto dolor possimus quos
-            </p>
-          </div>
-          <div class="social-links">
-            <h4>Follow Us</h4>
-            <ul class="links">
-              <li>
-                <a href=""><i class="fa-brands fa-facebook-f"></i></a>
-              </li>
-              <li>
-                <a href=""><i class="fa-brands fa-youtube"></i></a>
-              </li>
-              <li>
-                <a href=""><i class="fa-brands fa-twitter"></i></a>
-              </li>
-              <li>
-                <a href=""><i class="fa-brands fa-linkedin"></i></a>
-              </li>
-              <li>
-                <a href=""><i class="fa-brands fa-instagram"></i></a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="categories list">
-          <h4>Book Categories</h4>
-          <ul>
-            <li><a href="">Action</a></li>
-            <li><a href="">Adventure</a></li>
-            <li><a href="">Comedy</a></li>
-            <li><a href="">Crime</a></li>
-            <li><a href="">Drama</a></li>
-            <li><a href="">Fantasy</a></li>
-            <li><a href="">Horror</a></li>
-          </ul>
-        </div>
-        <div class="quick-links list">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="../index.html">About Us</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="book-filter.html">Products</a></li>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="registration.html">Sign Up</a></li>
-            <li><a href="cart-item.html">Cart</a></li>
-            <li><a href="checkout.html">Checkout</a></li>
-          </ul>
-        </div>
-        <div class="our-store list">
-          <h4>Our Store</h4>
-          <div class="map" style="margin-top: 1rem">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6310.594819201665!2d-122.42768319999999!3d37.73616639999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f7e60a337d5f5%3A0xfa0bb626904e5ab2!2z4KSV4KWJ4KSy4KWH4KScIOCkueCkv-Cksiwg4KS44KS-4KSoIOCkq-CljeCksOCkvuCkguCkuOCkv-CkuOCljeCkleCliywg4KSV4KWI4KSy4KWA4KSr4KWL4KSw4KWN4KSo4KS_4KSv4KS-LCDgpK_gpYLgpKjgpL7gpIfgpJ_gpYfgpKEg4KS44KWN4KSf4KWH4KSf4KWN4oCN4KS4!5e0!3m2!1shi!2sin!4v1686917463994!5m2!1shi!2sin"
-              height="70"
-              style="width: 100%; border: none; border-radius: 5px"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </div>
-          <ul>
-            <li>
-              <a href=""
-                ><i class="fa-solid fa-location-dot"></i>832 Thompson Drive,San
-                Fransisco CA 94 107,United States</a
-              >
-            </li>
-            <li>
-              <a href=""><i class="fa-solid fa-phone"></i>+12 1345678991</a>
-            </li>
-            <li>
-              <a href=""
-                ><i class="fa-solid fa-envelope"></i>support@bookoe.id</a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-    </footer>
-    <button class="back-to-top"><i class="fa-solid fa-chevron-up"></i></button>
-    <script src="../js/back-to-top.js"></script>
-  </body>
+	<section class="contact-section pro-contact">
+
+		<div class="contact-main redesigned-contact">
+			<div class="contact-info-panel">
+				<div class="info-logo">
+					<img src="../images/logo.png" alt="Ecomshop Logo" style="width:60px;height:60px;border-radius:12px;box-shadow:0 2px 8px #a855f7;">
+					<h2>Ecomshop</h2>
+					<p>Your Ultimate Book Destination</p>
+				</div>
+				<div class="info-details">
+					<h3>Contact Us</h3>
+					<ul>
+						<li><i class="fa-solid fa-envelope"></i> <a href="mailto:support@ecomshop.com">support@ecomshop.com</a></li>
+						<li><i class="fa-solid fa-phone"></i> <a href="tel:+12345678901">+1 234 567 8901</a></li>
+						<li><i class="fa-solid fa-location-dot"></i> 123 Ecom Street, Booktown, USA</li>
+					</ul>
+				</div>
+			</div>
+			<div class="contact-form-panel">
+				<div class="form-header">
+					<h2><i class="fa-solid fa-headset"></i> Get in Touch</h2>
+					<p>We're here to help! Fill out the form and our team will respond within 24 hours.</p>
+				</div>
+				<form class="contact-form" id="contactForm" autocomplete="off">
+					<div class="input-group">
+						<label for="name"><i class="fa-solid fa-user"></i> Name</label>
+						<input type="text" id="name" name="name" required placeholder="Your full name">
+					</div>
+					<div class="input-group">
+						<label for="email"><i class="fa-solid fa-envelope"></i> Email</label>
+						<input type="email" id="email" name="email" required placeholder="you@email.com">
+					</div>
+					<div class="input-group">
+						<label for="message"><i class="fa-solid fa-comment-dots"></i> Message</label>
+						<textarea id="message" name="message" required placeholder="Type your message..."></textarea>
+					</div>
+					<button type="submit"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
+					<div id="form-success" style="display:none;color:#6c47ff;font-weight:600;margin-top:12px;text-align:center;"></div>
+				</form>
+			</div>
+		</div>
+		</section>
+
+	<div id="footer-placeholder"></div>
+	<script src="../js/nav-include.js"></script>
+	<script src="../js/contact-enhance.js"></script>
+</body>
 </html>
-
+0
